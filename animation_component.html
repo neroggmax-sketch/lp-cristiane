@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviva — Cenário Vivo Realista</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #0b130e;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fotografia com Nitidez Nativa e Tom Apagado Sofisticado (Muted Matte Film) */
+        .photo-crisp-muted {
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            /* Tom ligeiramente apagado: menor saturação e brilho controlado para eliminar saturação estourada */
+            filter: saturate(0.82) brightness(0.88) contrast(0.96);
+            transition: filter 0.5s ease;
+        }
+
+        /* Filtro Matte Suave Sobre a Imagem */
+        .muted-tone-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg, 
+                rgba(14, 23, 17, 0.28) 0%, 
+                rgba(12, 20, 15, 0.15) 50%, 
+                rgba(8, 14, 10, 0.35) 100%
+            );
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        /* Glassmorphism Escuro e Discreto */
+        .glass-dark {
+            background: rgba(12, 20, 15, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-pill {
+            background: rgba(15, 26, 19, 0.72);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* 1. Movimento Pendular Real do Cesto Suspenso na Varanda */
+        @keyframes pendulumNatural {
+            0%, 100% { transform: rotate(0deg); }
+            30% { transform: rotate(2.4deg); }
+            70% { transform: rotate(-1.9deg); }
+        }
+
+        .sway-basket-subtle {
+            transform-origin: top center;
+            animation: pendulumNatural var(--basket-duration, 5.5s) ease-in-out infinite;
+        }
+
+        /* 2. Micro-ondulação Natural nas Folhagens da Árvore ao Fundo */
+        @keyframes treeSwayGentle {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.008, 0.995) translateY(-1.5px); }
+        }
+
+        .tree-natural-sway {
+            animation: treeSwayGentle var(--tree-duration, 6.5s) ease-in-out infinite;
+            transform-origin: bottom left;
+        }
+
+        /* 3. Brisa Suave nas Flores do Vaso */
+        @keyframes flowerMicroSway {
+            0%, 100% { transform: rotate(0deg); }
+            40% { transform: rotate(1.2deg) translateY(-0.5px); }
+            80% { transform: rotate(-0.8deg); }
+        }
+
+        .flower-natural-sway {
+            animation: flowerMicroSway var(--flower-duration, 4s) ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        /* 4. Cortina da Porta de Vidro com Movimento Aéreo Leve */
+        @keyframes curtainAirFlow {
+            0%, 100% { opacity: 0.12; transform: scaleX(1); }
+            50% { opacity: 0.28; transform: scaleX(1.1) translateX(2px); }
+        }
+
+        .curtain-flow {
+            animation: curtainAirFlow 7s ease-in-out infinite;
+            transform-origin: left center;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col justify-between text-slate-200">
+
+    <!-- Viewport da Animação do Cenário -->
+    <main id="sceneryContainer" class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+        
+        <!-- ==============================================================
+             CAMADA 1: FOTOGRAFIA ORIGINAL EM ALTA RESOLUÇÃO NATIVA
+             ============================================================== -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <img id="sceneryPhoto" 
+                 src="img/01.png" 
+                 alt="Varanda e Jardim Reviva" 
+                 class="w-full h-full object-cover object-center photo-crisp-muted">
+        </div>
+
+        <!-- ==============================================================
+             CAMADA 2: OVERLAY MATTE CINEMATOGRÁFICO (TOM APAGADO)
+             ============================================================== -->
+        <div class="muted-tone-overlay"></div>
+
+        <!-- ==============================================================
+             CAMADA 3: PONTOS DE MOVIMENTO NATURAL NO CENÁRIO REAL
+             ============================================================== -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+            
+            <!-- 3.1 Cesto Suspenso de Flores da Varanda (Pêndulo Físico Real) -->
+            <div class="absolute top-[34.4%] left-[64.7%] w-7 h-11 sway-basket-subtle"></div>
+
+            <!-- 3.2 Cesto Secundário ao Fundo da Varanda -->
+            <div class="absolute top-[37.8%] left-[45.8%] w-5 h-8 sway-basket-subtle" style="animation-delay: 1.4s;"></div>
+
+            <!-- 3.3 Balanço Leve das Flores Amarelas no Vaso Branco -->
+            <div class="absolute top-[56.5%] left-[56.5%] w-[8%] h-[14%] flower-natural-sway"></div>
+
+            <!-- 3.4 Balanço Leve das Flores no Vaso Médio -->
+            <div class="absolute top-[52.5%] left-[40.5%] w-[6%] h-[11%] flower-natural-sway" style="animation-delay: 0.9s;"></div>
+
+            <!-- 3.5 Brisa na Cortina da Porta de Vidro -->
+            <div class="absolute top-[36%] left-[73.5%] w-[10%] h-[30%] curtain-flow bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+            <!-- 3.6 Copa das Árvores ao Fundo (Balanço de Sombras Naturais) -->
+            <div class="absolute top-[8%] left-[3%] w-[35%] h-[38%] tree-natural-sway mix-blend-multiply opacity-25"
+                 style="background: radial-gradient(ellipse at center, rgba(30, 45, 35, 0.5) 0%, transparent 70%);">
+            </div>
+
+        </div>
+
+        <!-- ==============================================================
+             CAMADA 4: CANVAS DE FOLHAS REALISTAS COM FÍSICA 3D
+             ============================================================== -->
+        <canvas id="realisticLeafCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+
+        <!-- ==============================================================
+             CAMADA 5: PAINEL DE CONTROLE DISCRETO (GLASSMORPHISM)
+             ============================================================== -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 w-11/12 max-w-xl">
+            <div class="glass-dark rounded-2xl p-3.5 shadow-2xl flex flex-wrap items-center justify-between gap-3">
+                
+                <!-- Status -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-900/40 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                        <i class="fa-solid fa-wind text-sm"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Cenário com Vento Natural</h3>
+                        <p class="text-[11px] text-slate-400" id="windStatus">Brisa suave de outono</p>
+                    </div>
+                </div>
+
+                <!-- Controles de Vento -->
+                <div class="flex items-center space-x-2">
+                    <button onclick="setWind('calm')" id="btnCalm" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all">
+                        Calmo
+                    </button>
+                    <button onclick="setWind('breeze')" id="btnBreeze" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-700 text-white shadow-md transition-all">
+                        Brisa
+                    </button>
+                    <button onclick="setWind('gust')" id="btnGust" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all">
+                        Rajada
+                    </button>
+
+                    <div class="h-5 w-px bg-white/15 mx-1"></div>
+
+                    <!-- Botão de Ajuste de Tom Apagado -->
+                    <button onclick="toggleMutedTone()" id="btnTone" class="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/30 hover:bg-slate-700 transition-all flex items-center gap-1" title="Ajustar intensidade do tom apagado">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span class="hidden sm:inline">Tom Apagado</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Badge Superior -->
+        <div class="absolute top-5 left-5 z-30 hidden sm:flex items-center space-x-2 glass-pill px-3.5 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-medium text-slate-300">Física Realista de Folhas 3D</span>
+        </div>
+
+        <div class="absolute top-5 right-5 z-30">
+            <div class="glass-pill px-3.5 py-1.5 rounded-xl text-xs text-slate-300 flex items-center space-x-2">
+                <i class="fa-solid fa-hand-pointer text-emerald-400"></i>
+                <span>Mova o mouse ou clique para criar uma rajada suave</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==============================================================
+         MOTOR DE FÍSICA E RENDERIZAÇÃO REALISTA DE FOLHAS 3D
+         ============================================================== -->
+    <script>
+        const canvas = document.getElementById('realisticLeafCanvas');
+        const ctx = canvas.getContext('2d');
+        const photo = document.getElementById('sceneryPhoto');
+
+        let width, height;
+        let leaves = [];
+        let ripples = [];
+        let windTarget = 1.1;
+        let currentWind = 1.1;
+        let windSurge = 0;
+        let mouseWindX = 0;
+        let mouseWindY = 0;
+        let isMutedStrong = true;
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Interação Suave do Mouse
+        window.addEventListener('mousemove', (e) => {
+            const nx = (e.clientX / width - 0.5);
+            const ny = (e.clientY / height - 0.5);
+            mouseWindX = nx * 1.8;
+            mouseWindY = ny * 0.8;
+        });
+
+        // Efeito de Onda de Brisa no Ponto do Clique / Toque
+        class WindRipple {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 12;
+                this.maxRadius = 150;
+                this.alpha = 0.5;
+                this.active = true;
+            }
+
+            update() {
+                this.radius += (this.maxRadius - this.radius) * 0.14 + 1.8;
+                this.alpha *= 0.91;
+                if (this.alpha < 0.015) {
+                    this.active = false;
+                }
+            }
+
+            draw() {
+                if (!this.active) return;
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(180, 225, 190, ${this.alpha * 0.75})`;
+                ctx.lineWidth = 2.5 * (this.alpha / 0.5);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, Math.max(0, this.radius * 0.62), 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(220, 245, 215, ${this.alpha * 0.4})`;
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+
+        // Disparo de Efeito ao Clicar ou Tocar na Tela
+        function triggerScreenBurst(clientX, clientY) {
+            ripples.push(new WindRipple(clientX, clientY));
+
+            for (let i = 0; i < leaves.length; i++) {
+                const leaf = leaves[i];
+                const dx = leaf.x - clientX;
+                const dy = leaf.y - clientY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 280 && dist > 2) {
+                    const force = (1 - dist / 280) * 11;
+                    leaf.speedX += (dx / dist) * force;
+                    leaf.speedY += (dy / dist) * force - 2.5;
+                    leaf.rotSpeedX += (Math.random() * 0.08 - 0.04);
+                    leaf.rotSpeedY += (Math.random() * 0.08 - 0.04);
+                    leaf.rotSpeedZ += (Math.random() * 0.09 - 0.045);
+                }
+            }
+
+            for (let i = 0; i < 16; i++) {
+                leaves.push(new RealisticLeaf(clientX, clientY, true));
+            }
+
+            windSurge = Math.min(windSurge + 3.2, 7.0);
+        }
+
+        window.addEventListener('pointerdown', (e) => {
+            if (e.clientY > height - 90) return;
+            triggerScreenBurst(e.clientX, e.clientY);
+        });
+
+        // ==============================================================
+        // CLASSE DA FOLHA REALISTA (COM ROTAÇÃO TRIDIMENSIONAL VERDADEIRA)
+        // ==============================================================
+        class RealisticLeaf {
+            constructor(startX = null, startY = null, isBurst = false) {
+                this.isBurst = isBurst;
+                this.init(startX, startY);
+            }
+
+            init(startX = null, startY = null) {
+                if (startX !== null && startY !== null) {
+                    this.x = startX + (Math.random() * 26 - 13);
+                    this.y = startY + (Math.random() * 26 - 13);
+                    const burstAngle = Math.random() * Math.PI * 2;
+                    const burstForce = Math.random() * 7.5 + 4.5;
+                    this.speedX = Math.cos(burstAngle) * burstForce + 1.4;
+                    this.speedY = Math.sin(burstAngle) * burstForce - (Math.random() * 3 + 1.5);
+                    this.rotSpeedZ = (Math.random() * 0.08 - 0.04);
+                    this.rotSpeedX = (Math.random() * 0.1 + 0.035);
+                    this.rotSpeedY = (Math.random() * 0.08 + 0.03);
+                } else {
+                    this.x = Math.random() * (width + 300) - 150;
+                    this.y = Math.random() * -height * 0.7 - 30;
+                    this.speedX = (Math.random() * 1.2 - 0.3);
+                    this.speedY = Math.random() * 1.3 + 0.7;
+                }
+
+                this.size = Math.random() * 12 + 10;
+                this.aspectRatio = Math.random() * 0.35 + 0.45;
+                
+                this.angleZ = Math.random() * Math.PI * 2;
+                this.angleX = Math.random() * Math.PI * 2;
+                this.angleY = Math.random() * Math.PI * 2;
+
+                this.rotSpeedZ = (Math.random() * 0.03 - 0.015);
+                this.rotSpeedX = (Math.random() * 0.045 + 0.02);
+                this.rotSpeedY = (Math.random() * 0.035 + 0.015);
+
+                this.flutterAngle = Math.random() * Math.PI * 2;
+                this.flutterSpeed = Math.random() * 0.04 + 0.025;
+                this.flutterAmplitude = Math.random() * 1.6 + 0.8;
+
+                this.depth = Math.random() * 0.6 + 0.5;
+                this.opacity = Math.random() * 0.25 + 0.75;
+                this.curve = (Math.random() * 0.35 - 0.15);
+
+                const leafTypes = [
+                    {
+                        topColor: '#455f3c',
+                        backColor: '#6f8564',
+                        veinColor: 'rgba(215, 230, 205, 0.35)'
+                    },
+                    {
+                        topColor: '#53683f',
+                        backColor: '#7a8e63',
+                        veinColor: 'rgba(225, 235, 210, 0.3)'
+                    },
+                    {
+                        topColor: '#6b5e40',
+                        backColor: '#8c7d5c',
+                        veinColor: 'rgba(235, 220, 195, 0.35)'
+                    },
+                    {
+                        topColor: '#5d543e',
+                        backColor: '#7e7358',
+                        veinColor: 'rgba(230, 220, 200, 0.3)'
+                    }
+                ];
+
+                this.palette = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+            }
+
+            update() {
+                currentWind += (windTarget - currentWind) * 0.03;
+
+                this.angleZ += this.rotSpeedZ;
+                this.angleX += this.rotSpeedX;
+                this.angleY += this.rotSpeedY;
+                this.flutterAngle += this.flutterSpeed;
+
+                const faceNormal = Math.abs(Math.cos(this.angleX) * Math.cos(this.angleY));
+                const lift = faceNormal * 0.55;
+
+                const flutterX = Math.sin(this.flutterAngle) * this.flutterAmplitude;
+                const flutterY = Math.cos(this.flutterAngle * 0.7) * 0.4;
+
+                const effWind = currentWind + windSurge;
+
+                if (this.isBurst) {
+                    this.speedX *= 0.96;
+                    this.speedY = this.speedY * 0.95 + 0.05 * 1.1;
+                    this.rotSpeedX = this.rotSpeedX * 0.98 + 0.02 * 0.03;
+                    this.rotSpeedY = this.rotSpeedY * 0.98 + 0.02 * 0.02;
+                }
+
+                this.x += (this.speedX + flutterX + (effWind * 1.1) + mouseWindX) * this.depth;
+                this.y += (this.speedY - lift + flutterY + (effWind * 0.15) + mouseWindY * 0.3) * this.depth;
+
+                if (this.y > height + 40 || this.x > width + 180 || this.x < -180) {
+                    if (this.isBurst) {
+                        this.active = false;
+                    } else {
+                        this.init();
+                        this.y = -25;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angleZ);
+
+                const scale3DX = Math.cos(this.angleY);
+                const scale3DY = Math.cos(this.angleX);
+                
+                ctx.scale(Math.abs(scale3DX) < 0.05 ? 0.05 : scale3DX, Math.abs(scale3DY) < 0.05 ? 0.05 : scale3DY);
+                ctx.globalAlpha = this.opacity * this.depth;
+
+                const isBackSide = (scale3DX * scale3DY) < 0;
+                const baseColor = isBackSide ? this.palette.backColor : this.palette.topColor;
+
+                const l = this.size;
+                const w = this.size * this.aspectRatio;
+
+                if (this.depth > 0.8) {
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.25)';
+                    ctx.shadowBlur = 6;
+                    ctx.shadowOffsetY = 4;
+                }
+
+                // 1. Pecíolo / Cabinho
+                ctx.beginPath();
+                ctx.strokeStyle = '#32281a';
+                ctx.lineWidth = 1.1;
+                ctx.moveTo(0, l * 0.75);
+                ctx.lineTo(0, l * 0.95);
+                ctx.stroke();
+                ctx.shadowColor = 'transparent';
+
+                // 2. Limbo da Folha com Curvatura Orgânica
+                ctx.beginPath();
+                ctx.moveTo(0, -l * 0.75);
+
+                ctx.bezierCurveTo(
+                    w * 1.1, -l * 0.3 + (this.curve * 10),
+                    w * 0.95, l * 0.4,
+                    0, l * 0.75
+                );
+
+                ctx.bezierCurveTo(
+                    -w * 0.95, l * 0.4,
+                    -w * 1.1, -l * 0.3 - (this.curve * 10),
+                    0, -l * 0.75
+                );
+
+                const grad = ctx.createLinearGradient(-w, 0, w, 0);
+                grad.addColorStop(0, baseColor);
+                grad.addColorStop(0.5, isBackSide ? '#7b916f' : '#4d6943');
+                grad.addColorStop(1, isBackSide ? '#5e7254' : '#394e31');
+
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+
+                // 3. Nervura Central
+                ctx.beginPath();
+                ctx.strokeStyle = this.palette.veinColor;
+                ctx.lineWidth = 0.9;
+                ctx.moveTo(0, -l * 0.7);
+                ctx.quadraticCurveTo(this.curve * 3, 0, 0, l * 0.75);
+                ctx.stroke();
+
+                // 4. Nervuras Secundárias
+                ctx.strokeStyle = this.palette.veinColor;
+                ctx.lineWidth = 0.5;
+                const veinSteps = 4;
+                for (let v = 1; v <= veinSteps; v++) {
+                    const py = -l * 0.5 + (v * (l * 0.22));
+                    const pw = w * (1 - Math.abs(py / l)) * 0.65;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(0, py);
+                    ctx.lineTo(pw, py - l * 0.1);
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(0, py);
+                    ctx.lineTo(-pw, py - l * 0.1);
+                    ctx.stroke();
+                }
+
+                ctx.restore();
+            }
+        }
+
+        // Criar Conjunto Inicial de Folhas
+        const leafQuantity = 38;
+        for (let i = 0; i < leafQuantity; i++) {
+            leaves.push(new RealisticLeaf());
+        }
+
+        // Loop Principal de Animação
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            if (windSurge > 0.01) {
+                windSurge *= 0.95;
+            } else {
+                windSurge = 0;
+            }
+
+            for (let i = 0; i < ripples.length; i++) {
+                ripples[i].update();
+                ripples[i].draw();
+            }
+            ripples = ripples.filter(r => r.active);
+
+            for (let i = leaves.length - 1; i >= 0; i--) {
+                const leaf = leaves[i];
+                leaf.update();
+                leaf.draw();
+
+                if (leaf.isBurst && leaf.active === false) {
+                    leaves.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // ==============================================================
+        // CONTROLES DE VENTO & TONALIDADE
+        // ==============================================================
+        function setWind(level) {
+            const btnCalm = document.getElementById('btnCalm');
+            const btnBreeze = document.getElementById('btnBreeze');
+            const btnGust = document.getElementById('btnGust');
+            const windStatus = document.getElementById('windStatus');
+
+            [btnCalm, btnBreeze, btnGust].forEach(b => {
+                b.className = "px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all";
+            });
+
+            const activeClass = "px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-700 text-white shadow-md transition-all";
+
+            if (level === 'calm') {
+                windTarget = 0.45;
+                btnCalm.className = activeClass;
+                windStatus.innerText = "Ar calmo e folhas planando suavemente";
+                document.documentElement.style.setProperty('--basket-duration', '7.5s');
+                document.documentElement.style.setProperty('--tree-duration', '9s');
+                document.documentElement.style.setProperty('--flower-duration', '6s');
+            } else if (level === 'breeze') {
+                windTarget = 1.1;
+                btnBreeze.className = activeClass;
+                windStatus.innerText = "Brisa suave de outono";
+                document.documentElement.style.setProperty('--basket-duration', '5.5s');
+                document.documentElement.style.setProperty('--tree-duration', '6.5s');
+                document.documentElement.style.setProperty('--flower-duration', '4s');
+            } else if (level === 'gust') {
+                windTarget = 3.2;
+                btnGust.className = activeClass;
+                windStatus.innerText = "Rajada refrescante de vento no jardim";
+                document.documentElement.style.setProperty('--basket-duration', '2.8s');
+                document.documentElement.style.setProperty('--tree-duration', '4s');
+                document.documentElement.style.setProperty('--flower-duration', '2s');
+            }
+        }
+
+        // Alternar Intensidade do Tom Apagado
+        function toggleMutedTone() {
+            isMutedStrong = !isMutedStrong;
+            const btnTone = document.getElementById('btnTone');
+
+            if (isMutedStrong) {
+                photo.style.filter = "saturate(0.82) brightness(0.88) contrast(0.96)";
+                btnTone.className = "px-2.5 py-1.5 text-xs font-medium rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/30 hover:bg-slate-700 transition-all flex items-center gap-1";
+            } else {
+                photo.style.filter = "saturate(0.72) brightness(0.82) contrast(0.94)";
+                btnTone.className = "px-2.5 py-1.5 text-xs font-medium rounded-lg bg-emerald-950 text-emerald-200 border border-emerald-400/50 transition-all flex items-center gap-1";
+            }
+        }
+    </script>
+</body>
+</html>
