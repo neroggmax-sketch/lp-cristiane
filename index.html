@@ -5,46 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviva Senior's Residence | Lar de Idosos & Cuidado Humanizado</title>
-    <meta name="description" content="A Reviva Senior's Residence oferece um lar acolhedor, assistência de enfermagem 24 horas e equipe multidisciplinar especializada para idosos em Campinas/SP. Conheça nossas 3 unidades no Taquaral.">
-    <meta name="keywords" content="casa de repouso, residencial sênior, ILPI, idosos Campinas, Taquaral, enfermagem 24h, Reviva Seniors Residence, cuidado humanizado, Cristiane Alberti">
+    <meta name="description"
+        content="A Reviva Senior's Residence oferece um lar acolhedor, assistência de enfermagem 24 horas e equipe multidisciplinar especializada para idosos em Campinas/SP. Conheça nossas 3 unidades no Taquaral.">
+    <meta name="keywords"
+        content="casa de repouso, residencial sênior, ILPI, idosos Campinas, Taquaral, enfermagem 24h, Reviva Seniors Residence, cuidado humanizado, Cristiane Alberti">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="img/301858108_578442737058922_7695860622089312756_n.jpg">
+    <link rel="icon" type="image/png" href="img/logo2.png">
 
     <!-- Fontes & Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20">
 </head>
 
 <body>
 
-    <!-- ==========================================================================
-       BARRA DE CONTATO SUPERIOR (TOP BAR)
-       ========================================================================== -->
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <div class="top-bar-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Campinas - SP (Bairro Taquaral • 3 Unidades)</span>
-                </div>
-                <div class="top-bar-item">
-                    <i class="fas fa-user-nurse"></i>
-                    <span>Direção Técnica: Enfermeira Especializada</span>
-                </div>
-            </div>
-            <div class="top-bar-right">
-                <div class="top-bar-badge">
-                    <span>Enfermagem Presente 24 Horas</span>
-                </div>
-                <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades%20da%20Reviva" target="_blank" class="top-bar-item" style="color: #a4ea75; font-weight: 600;">
-                    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
 
     <!-- ==========================================================================
        HEADER PRINCIPAL & NAVEGAÇÃO
@@ -52,21 +29,21 @@
     <header class="main-header" id="mainHeader">
         <div class="container header-inner">
             <a href="#inicio" class="brand-logo" aria-label="Reviva Senior's Residence">
-                <img src="img/301858108_578442737058922_7695860622089312756_n.jpg" alt="Logo Reviva Senior's Residence">
+                <img src="img/logo2.png" alt="Logo Reviva Senior's Residence">
             </a>
 
             <nav class="nav-menu" id="navMenu">
                 <a href="#inicio" class="nav-link active">Início</a>
                 <a href="#unidades" class="nav-link">Nossas Unidades</a>
+                <a href="#historia" class="nav-link">Nossa História</a>
                 <a href="#biografia" class="nav-link">A Fundadora</a>
                 <a href="#diferenciais" class="nav-link">Cuidado Humanizado</a>
-                <a href="#terapias" class="nav-link">Terapias & Saúde</a>
-                <a href="#depoimentos" class="nav-link">Famílias</a>
                 <a href="#duvidas" class="nav-link">Dúvidas</a>
             </nav>
 
             <div class="header-actions">
-                <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita%20na%20Reviva" target="_blank" class="btn btn-whatsapp">
+                <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita%20na%20Reviva"
+                    target="_blank" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                 </a>
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
@@ -80,9 +57,12 @@
        HERO SECTION — CENÁRIO VIVO COM FOLHAS 3D E CARD FLUTUANTE
        ========================================================================== -->
     <section id="inicio" class="hero-section hero-cinematic">
-        <!-- 1. Camada da Foto com Alta Resolução Nativa e Tom Apagado -->
+        <!-- 1. Camada de Vídeo de Fundo em Loop Contínuo -->
         <div class="hero-bg-layer">
-            <img src="img/01.png" alt="Residencial Reviva - Varanda e Jardim" class="hero-bg-photo">
+            <video class="hero-bg-video" autoplay loop muted playsinline poster="img/01.png">
+                <source src="img/download.webm" type="video/webm">
+                <img src="img/01.png" alt="Residencial Reviva - Varanda e Jardim" class="hero-bg-photo">
+            </video>
         </div>
 
         <!-- 2. Filtro Matte Suave Cinematográfico (Tom Apagado) -->
@@ -103,53 +83,37 @@
 
         <!-- 5. Container do Card Flutuante Alinhado Bem à Esquerda -->
         <div class="hero-container-cinematic">
-            
-            <!-- Card Flutuante Dark Glassmorphism -->
-            <div class="hero-floating-card">
-                
-                <!-- Badges do Topo -->
-                <div class="hero-card-badges">
-                    <span class="hero-pill-badge">
-                        <i class="fas fa-heart-pulse"></i> Cuidado Humanizado 24h
-                    </span>
-                    <span class="hero-pill-badge">
-                        <i class="fas fa-user-nurse"></i> Enfermeira Especializada
-                    </span>
-                </div>
 
-                <!-- Título com Destaque Menta / Verde -->
+            <div class="hero-floating-card">
+                <!-- Pré-título Elegante -->
+                <span class="hero-eyebrow">Residencial para Idosos • Campinas</span>
+
+                <!-- Título com Destaque Menta / Verde e Efeito Digitando -->
                 <h1 class="hero-card-title">
-                    Residencial Sênior e <span class="highlight-mint">Acolhimento com Afeto</span> no Taquaral
+                    <span class="hero-title-block">Residencial Sênior e</span>
+                    <span class="hero-title-block highlight-mint">Acolhimento</span>
+                    <span class="hero-title-block"><span class="highlight-mint">com Afeto</span> no</span>
+                    <span class="hero-title-block hero-typewriter-wrap"><span id="heroTypewriter"
+                            class="hero-typewriter-word">Taquaral</span><span id="heroTypewriterCursor"
+                            class="hero-typewriter-cursor" aria-hidden="true">|</span></span>
                 </h1>
 
                 <!-- Descrição -->
                 <p class="hero-card-desc">
-                    Estrutura completa com assistência de enfermagem 24 horas, equipe multidisciplinar e 3 unidades exclusivas e ensolaradas em Campinas para quem você mais ama viver com respeito e vitalidade.
+                    Assistência de enfermagem 24 horas, equipe multidisciplinar e 3 unidades completas no Taquaral,
+                    proporcionando conforto, segurança e convivência para quem você ama.
                 </p>
 
-                <!-- Ações Diretas (Botões idênticos à referência) -->
+                <!-- Ações Diretas -->
                 <div class="hero-card-actions">
-                    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita%20na%20Reviva" target="_blank" class="btn btn-hero-whatsapp">
+                    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita%20na%20Reviva"
+                        target="_blank" class="btn btn-hero-whatsapp">
                         <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                     </a>
                     <a href="#unidades" class="btn btn-hero-outline">
                         Ver Nossas Unidades <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
-
-                <!-- Destaques Rápidos na Base do Card -->
-                <div class="hero-card-footer">
-                    <div class="hero-mini-feature">
-                        <i class="fas fa-check-circle"></i> 3 Unidades no Taquaral
-                    </div>
-                    <div class="hero-mini-feature">
-                        <i class="fas fa-check-circle"></i> Monitoramento 24 Horas
-                    </div>
-                    <div class="hero-mini-feature">
-                        <i class="fas fa-check-circle"></i> 100% Acessível
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -163,209 +127,358 @@
         <canvas id="unidades-bg-canvas" class="section-blueprint-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-building"></i> Nossas Casas</span>
                 <h2 class="section-title">Conheça Nossas 3 Unidades no Taquaral</h2>
                 <p class="section-subtitle">
-                    Projetadas para aliar o calor de um lar com toda a segurança hospitalar e acessibilidade que a terceira idade merece. Clique nas abas para ver os ambientes e fotos de cada unidade.
+                    Projetadas para aliar o calor de um lar com toda a segurança hospitalar e acessibilidade que a
+                    terceira idade merece. Clique no botão lateral ou deslize para conhecer cada unidade.
                 </p>
             </div>
 
-            <!-- Abas Seletoras -->
-            <div class="units-tabs-wrapper">
-                <button type="button" class="unit-tab-btn active" data-unit="unidade1">
-                    <i class="fas fa-house-user"></i> Unidade 1 • Magalhães 689
+            <!-- Carrossel Wrapper Estilo Netflix -->
+            <div class="units-carousel-wrapper" id="unitsCarouselWrapper" tabindex="0"
+                aria-label="Carrossel de Condomínios">
+                <!-- Botão de Navegação Esquerda (Netflix) -->
+                <button type="button" class="netflix-slider-btn netflix-prev-btn" id="unitsPrevBtn"
+                    aria-label="Condomínio anterior" title="Ver condomínio anterior">
+                    <i class="fas fa-chevron-left"></i>
                 </button>
-                <button type="button" class="unit-tab-btn" data-unit="unidade2">
-                    <i class="fas fa-sun"></i> Unidade 2 • Magalhães 809 (Jardim & Fonte)
-                </button>
-                <button type="button" class="unit-tab-btn" data-unit="unidade3">
-                    <i class="fas fa-seedling"></i> Unidade 3 • Magalhães 740 (Varanda & Verde)
+
+                <!-- Viewport & Trilho com os 3 Condomínios -->
+                <div class="units-slider-viewport">
+                    <div class="units-slider-track" id="unitsSliderTrack">
+
+                        <!-- SLIDE UNIDADE 1 -->
+                        <div class="unit-slide" id="pane-unidade1" data-index="0">
+                            <div class="unit-card-grid">
+                                <div class="unit-info-col">
+                                    <h3 class="unit-name">Unidade 1: Reviva Residence</h3>
+
+                                    <p class="unit-desc">
+                                        Ambiente seguro, quartos espaçosos e aconchegantes com camas adaptadas,
+                                        banheiros com acessibilidade total, ampla cozinha com padrão de higiene rigoroso
+                                        e solarium para banhos de sol diários e momentos de serenidade.
+                                    </p>
+
+                                    <div class="unit-amenities-list">
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Quartos
+                                            suítes e compartilhados</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Camas com
+                                            proteção antiqueda</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Cozinha
+                                            nutricional profissional</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Solarium e
+                                            ventilação natural</div>
+                                    </div>
+                                </div>
+
+                                <div class="unit-gallery-col">
+                                    <div class="unit-gallery-main"
+                                        onclick="openLightbox('unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg', 'Unidade 1: Dormitórios amplos com piso térmico e varanda integrada')">
+                                        <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg"
+                                            alt="Dormitório Unidade 1" id="mainImg-unidade1">
+                                        <div class="gallery-overlay-hint">
+                                            <i class="fas fa-expand"></i> Clique para ampliar
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-gallery-thumbs">
+                                        <div class="gallery-thumb active"
+                                            onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg', 'Unidade 1: Dormitórios amplos e aconchegantes')">
+                                            <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg"
+                                                alt="Quarto com varanda">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (2).jpeg', 'Unidade 1: Cozinha ampla com infraestrutura nutricional completa')">
+                                            <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (2).jpeg"
+                                                alt="Cozinha estruturada">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.20 (1).jpeg', 'Unidade 1: Suíte espaçosa com acessibilidade e banheiro privativo')">
+                                            <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20 (1).jpeg"
+                                                alt="Banheiro adaptado">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (1).jpeg', 'Unidade 1: Acesso lateral arejado com solarium')">
+                                            <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (1).jpeg"
+                                                alt="Solarium da unidade 1">
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-address-box">
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
+                                            Unidade</div>
+                                        <div class="unit-address-text">Rua Fernão de Magalhães, 689, Taquaral,
+                                            Campinas/SP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="unit-slide-dark-overlay" aria-hidden="true" title="Ver Unidade 1"></div>
+                        </div>
+
+                        <!-- SLIDE UNIDADE 2 -->
+                        <div class="unit-slide" id="pane-unidade2" data-index="1">
+                            <div class="unit-card-grid">
+                                <div class="unit-info-col">
+                                    <h3 class="unit-name">Unidade 2: Reviva Jardim</h3>
+
+                                    <p class="unit-desc">
+                                        Uma encantadora casa com fachada em tijolos aparentes, amplo jardim gramado com
+                                        árvores nativas, banco de descanso e linda fonte d'água. Toda a entrada conta
+                                        com rampa suave de acessibilidade e corrimão duplo contínuo.
+                                    </p>
+
+                                    <div class="unit-amenities-list">
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim
+                                            frontal com fonte e pássaros</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Rampa com
+                                            inclinação suave e corrimão</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Salas de
+                                            convivência iluminadas</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Clima de
+                                            chácara e sossego</div>
+                                    </div>
+                                </div>
+
+                                <div class="unit-gallery-col">
+                                    <div class="unit-gallery-main"
+                                        onclick="openLightbox('unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg', 'Unidade 2: Fachada charmosa em tijolo com rampa e jardim')">
+                                        <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg"
+                                            alt="Fachada Unidade 2" id="mainImg-unidade2">
+                                        <div class="gallery-overlay-hint">
+                                            <i class="fas fa-expand"></i> Clique para ampliar
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-gallery-thumbs">
+                                        <div class="gallery-thumb active"
+                                            onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg', 'Unidade 2: Jardim com fonte e rampa de acessibilidade')">
+                                            <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg"
+                                                alt="Jardim com fonte">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.22 (1).jpeg', 'Unidade 2: Detalhe da entrada acessível e área de descanso')">
+                                            <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22 (1).jpeg"
+                                                alt="Entrada e rampa">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.23 (2).jpeg', 'Unidade 2: Acomodações arejadas e organizadas')">
+                                            <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.23 (2).jpeg"
+                                                alt="Quarto aconchegante">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.24.jpeg', 'Unidade 2: Sala de estar e convivência acolhedora')">
+                                            <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.24.jpeg"
+                                                alt="Sala de convivência">
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-address-box">
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
+                                            Unidade</div>
+                                        <div class="unit-address-text">Rua Fernão de Magalhães, 809, Taquaral,
+                                            Campinas/SP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="unit-slide-dark-overlay" aria-hidden="true" title="Ver Unidade 2"></div>
+                        </div>
+
+                        <!-- SLIDE UNIDADE 3 -->
+                        <div class="unit-slide" id="pane-unidade3" data-index="2">
+                            <div class="unit-card-grid">
+                                <div class="unit-info-col">
+                                    <h3 class="unit-name">Unidade 3: Reviva Natureza</h3>
+
+                                    <p class="unit-desc">
+                                        Destaque para a espetacular varanda com portas de vidro amplas integradas ao
+                                        jardim florido com palmeiras e plantas ornamentais. Quartos luminosos, pisos em
+                                        padrão amadeirado acolhedor e mobiliário planejado para conforto total.
+                                    </p>
+
+                                    <div class="unit-amenities-list">
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Varanda com
+                                            área de estar coberta</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim
+                                            paisagístico com flores e sol</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Piso
+                                            amadeirado aconchegante</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Portas amplas
+                                            e circulação livre</div>
+                                    </div>
+                                </div>
+
+                                <div class="unit-gallery-col">
+                                    <div class="unit-gallery-main"
+                                        onclick="openLightbox('unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg', 'Unidade 3: Varanda integrada ao jardim com flores e palmeiras')">
+                                        <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg"
+                                            alt="Varanda e Jardim da Unidade 3" id="mainImg-unidade3">
+                                        <div class="gallery-overlay-hint">
+                                            <i class="fas fa-expand"></i> Clique para ampliar
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-gallery-thumbs">
+                                        <div class="gallery-thumb active"
+                                            onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg', 'Unidade 3: Área externa e varanda de relaxamento')">
+                                            <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg"
+                                                alt="Jardim e varanda">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.52.jpeg', 'Unidade 3: Dormitório iluminado com piso térmico amadeirado')">
+                                            <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.52.jpeg"
+                                                alt="Quarto Unidade 3">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (1).jpeg', 'Unidade 3: Vista aconchegante das acomodações')">
+                                            <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (1).jpeg"
+                                                alt="Quarto acolhedor">
+                                        </div>
+                                        <div class="gallery-thumb"
+                                            onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (3).jpeg', 'Unidade 3: Integração da varanda com ambiente interno')">
+                                            <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (3).jpeg"
+                                                alt="Varanda vista interna">
+                                        </div>
+                                    </div>
+
+                                    <div class="unit-address-box">
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
+                                            Unidade</div>
+                                        <div class="unit-address-text">Rua Fernão de Magalhães, 740, Taquaral,
+                                            Campinas/SP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="unit-slide-dark-overlay" aria-hidden="true" title="Ver Unidade 3"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Botão de Navegação Direita (Netflix - Passar para o lado) -->
+                <button type="button" class="netflix-slider-btn netflix-next-btn" id="unitsNextBtn"
+                    aria-label="Próximo condomínio" title="Passar para o próximo condomínio">
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="netflix-btn-pulse"></span>
                 </button>
             </div>
 
-            <!-- PAINEL UNIDADE 1 -->
-            <div class="unit-content-pane active" id="pane-unidade1">
-                <div class="unit-card-grid">
-                    <div class="unit-info-col">
-                        <div>
-                            <span class="unit-number-tag"><i class="fas fa-shield-alt"></i> Cuidado Integral & Estrutura Completa</span>
-                            <h3 class="unit-name">Unidade 1 — Reviva Residence</h3>
-                            
-                            <div class="unit-address-box">
-                                <div class="unit-address-label"><i class="fas fa-location-pin"></i> Endereço da Unidade</div>
-                                <div class="unit-address-text">Rua Fernão de Magalhães, 689 — Taquaral, Campinas - SP</div>
-                            </div>
+        </div>
+    </section>
 
-                            <p class="unit-desc">
-                                Ambiente seguro, quartos espaçosos e aconchegantes com camas adaptadas, banheiros com acessibilidade total, ampla cozinha com padrão de higiene rigoroso e solarium para banhos de sol diários e momentos de serenidade.
-                            </p>
+    <!-- ==========================================================================
+       SEÇÃO: NOSSA HISTÓRIA E VALORES (ROLO DE FILME VIVO)
+       ========================================================================== -->
+    <section id="historia" class="section section-dark-luxury section-history-film">
+        <div class="container history-container">
+            <div class="history-grid">
 
-                            <div class="unit-amenities-list">
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Quartos suítes e compartilhados</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Camas com proteção antiqueda</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Cozinha nutricional profissional</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Solarium e ventilação natural</div>
-                            </div>
-                        </div>
+                <!-- COLUNA ESQUERDA: ROLO DE FILME COM FOTOS SUBINDO (1 A 7) -->
+                <div class="film-column-wrapper">
+                    <div class="film-perspective-stage">
+                        <div class="film-viewport">
+                            <!-- Máscaras de gradiente suave no topo e na base do rolo -->
+                            <div class="film-mask-top"></div>
+                            <div class="film-mask-bottom"></div>
 
-                        <div class="unit-actions">
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%201%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20689)" target="_blank" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> Agendar Visita na Unidade 1
-                            </a>
-                            <a href="https://maps.google.com/?q=Rua+Fernao+de+Magalhaes+689+Taquaral+Campinas+SP" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-map-marked-alt"></i> Ver no Mapa
-                            </a>
-                        </div>
-                    </div>
+                            <!-- Track contínuo com imagens 1 a 7 duplicadas para loop infinito sem cortes -->
+                            <div class="film-track" id="filmTrack">
+                                <!-- Primeiro Bloco (Imagens 1 a 7) -->
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/1.jpg" alt="Acolhimento e Integração na Reviva" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/2.jpg" alt="Convivência e Música no Salão Reviva" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/3.jpg" alt="Cristiane Alberti e Equipe de Cuidado" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/4.jpg" alt="Atenção e Diálogo com Residentes" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/5.jpg" alt="Atividades e Sorrisos Coletivos" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/6.jpg" alt="Terapia Musical e Conforto" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item">
+                                    <div class="film-card">
+                                        <img src="img/7.jpg" alt="Espaço Aconchegante e Convivência" loading="lazy">
+                                    </div>
+                                </div>
 
-                    <div class="unit-gallery-col">
-                        <div class="unit-gallery-main" onclick="openLightbox('unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg', 'Unidade 1 - Dormitórios amplos com piso térmico e varanda integrada')">
-                            <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg" alt="Dormitório Unidade 1" id="mainImg-unidade1">
-                            <div class="gallery-overlay-hint">
-                                <i class="fas fa-expand"></i> Clique para ampliar
-                            </div>
-                        </div>
-
-                        <div class="unit-gallery-thumbs">
-                            <div class="gallery-thumb active" onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg', 'Unidade 1 - Dormitórios amplos e aconchegantes')">
-                                <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20.jpeg" alt="Quarto com varanda">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (2).jpeg', 'Unidade 1 - Cozinha ampla com infraestrutura nutricional completa')">
-                                <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (2).jpeg" alt="Cozinha estruturada">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.20 (1).jpeg', 'Unidade 1 - Suíte espaçosa com acessibilidade e banheiro privativo')">
-                                <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.20 (1).jpeg" alt="Banheiro adaptado">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade1', 'unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (1).jpeg', 'Unidade 1 - Acesso lateral arejado com solarium')">
-                                <img src="unidade1/WhatsApp Image 2026-09-14 at 13.17.21 (1).jpeg" alt="Solarium da unidade 1">
+                                <!-- Segundo Bloco Idêntico para Loop Perfeito (1 a 7) -->
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/1.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/2.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/3.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/4.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/5.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/6.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="film-item" aria-hidden="true">
+                                    <div class="film-card">
+                                        <img src="img/7.jpg" alt="" loading="lazy">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- PAINEL UNIDADE 2 -->
-            <div class="unit-content-pane" id="pane-unidade2">
-                <div class="unit-card-grid">
-                    <div class="unit-info-col">
-                        <div>
-                            <span class="unit-number-tag"><i class="fas fa-tree"></i> Natureza, Rampa Segura & Fonte de Água</span>
-                            <h3 class="unit-name">Unidade 2 — Reviva Jardim</h3>
-                            
-                            <div class="unit-address-box">
-                                <div class="unit-address-label"><i class="fas fa-location-pin"></i> Endereço da Unidade</div>
-                                <div class="unit-address-text">Rua Fernão de Magalhães, 809 — Taquaral, Campinas - SP</div>
-                            </div>
+                <!-- COLUNA DIREITA: HISTÓRIA, VALORES & PROPÓSITO -->
+                <div class="history-content-col">
+                    <h2 class="section-title">Nossa história e valores</h2>
 
-                            <p class="unit-desc">
-                                Uma encantadora casa com fachada em tijolos aparentes, amplo jardim gramado com árvores nativas, banco de descanso e linda fonte d'água. Toda a entrada conta com rampa suave de acessibilidade e corrimão duplo contínuo.
-                            </p>
+                    <p class="history-text history-lead">
+                        A <strong>Reviva Senior’s Residence</strong> nasceu de um impulso genuíno de compaixão e do
+                        compromisso inegociável de garantir dignidade, afeto e máxima segurança às pessoas idosas,
+                        transformando a assistência especializada em uma verdadeira extensão do lar da sua família.
+                    </p>
 
-                            <div class="unit-amenities-list">
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim frontal com fonte e pássaros</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Rampa com inclinação suave e corrimão</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Salas de convivência iluminadas</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Clima de chácara e sossego</div>
-                            </div>
-                        </div>
-
-                        <div class="unit-actions">
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%202%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20809)" target="_blank" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> Agendar Visita na Unidade 2
-                            </a>
-                            <a href="https://maps.google.com/?q=Rua+Fernao+de+Magalhaes+809+Taquaral+Campinas+SP" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-map-marked-alt"></i> Ver no Mapa
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="unit-gallery-col">
-                        <div class="unit-gallery-main" onclick="openLightbox('unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg', 'Unidade 2 - Fachada charmosa em tijolo com rampa e jardim')">
-                            <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg" alt="Fachada Unidade 2" id="mainImg-unidade2">
-                            <div class="gallery-overlay-hint">
-                                <i class="fas fa-expand"></i> Clique para ampliar
-                            </div>
-                        </div>
-
-                        <div class="unit-gallery-thumbs">
-                            <div class="gallery-thumb active" onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg', 'Unidade 2 - Jardim com fonte e rampa de acessibilidade')">
-                                <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22.jpeg" alt="Jardim com fonte">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.22 (1).jpeg', 'Unidade 2 - Detalhe da entrada acessível e área de descanso')">
-                                <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.22 (1).jpeg" alt="Entrada e rampa">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.23 (2).jpeg', 'Unidade 2 - Acomodações arejadas e organizadas')">
-                                <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.23 (2).jpeg" alt="Quarto aconchegante">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade2', 'unidade2/WhatsApp Image 2026-09-14 at 13.16.24.jpeg', 'Unidade 2 - Sala de estar e convivência acolhedora')">
-                                <img src="unidade2/WhatsApp Image 2026-09-14 at 13.16.24.jpeg" alt="Sala de convivência">
-                            </div>
-                        </div>
-                    </div>
+                    <p class="history-text">
+                        Com três residências arborizadas e adaptadas no coração do Taquaral em Campinas, unimos o
+                        aconchego acolhedor de um lar com a mais rigorosa assistência técnica de enfermagem 24 horas.
+                        Cada ambiente foi cuidadosamente planejado para que nossos residentes desfrutem de autonomia,
+                        conforto e tranquilidade contínua.
+                    </p>
                 </div>
+
             </div>
-
-            <!-- PAINEL UNIDADE 3 -->
-            <div class="unit-content-pane" id="pane-unidade3">
-                <div class="unit-card-grid">
-                    <div class="unit-info-col">
-                        <div>
-                            <span class="unit-number-tag"><i class="fas fa-spa"></i> Varanda Ensolarada, Flores & Bem-Estar</span>
-                            <h3 class="unit-name">Unidade 3 — Reviva Natureza</h3>
-                            
-                            <div class="unit-address-box">
-                                <div class="unit-address-label"><i class="fas fa-location-pin"></i> Endereço da Unidade</div>
-                                <div class="unit-address-text">Rua Fernão de Magalhães, 740 — Taquaral, Campinas - SP</div>
-                            </div>
-
-                            <p class="unit-desc">
-                                Destaque para a espetacular varanda com portas de vidro amplas integradas ao jardim florido com palmeiras e plantas ornamentais. Quartos luminosos, pisos em padrão amadeirado acolhedor e mobiliário planejado para conforto total.
-                            </p>
-
-                            <div class="unit-amenities-list">
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Varanda com área de estar coberta</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim paisagístico com flores e sol</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Piso amadeirado aconchegante</div>
-                                <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Portas amplas e circulação livre</div>
-                            </div>
-                        </div>
-
-                        <div class="unit-actions">
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%203%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20740)" target="_blank" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> Agendar Visita na Unidade 3
-                            </a>
-                            <a href="https://maps.google.com/?q=Rua+Fernao+de+Magalhaes+740+Taquaral+Campinas+SP" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-map-marked-alt"></i> Ver no Mapa
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="unit-gallery-col">
-                        <div class="unit-gallery-main" onclick="openLightbox('unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg', 'Unidade 3 - Varanda integrada ao jardim com flores e palmeiras')">
-                            <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg" alt="Varanda e Jardim da Unidade 3" id="mainImg-unidade3">
-                            <div class="gallery-overlay-hint">
-                                <i class="fas fa-expand"></i> Clique para ampliar
-                            </div>
-                        </div>
-
-                        <div class="unit-gallery-thumbs">
-                            <div class="gallery-thumb active" onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg', 'Unidade 3 - Área externa e varanda de relaxamento')">
-                                <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (2).jpeg" alt="Jardim e varanda">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.52.jpeg', 'Unidade 3 - Dormitório iluminado com piso térmico amadeirado')">
-                                <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.52.jpeg" alt="Quarto Unidade 3">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (1).jpeg', 'Unidade 3 - Vista aconchegante das acomodações')">
-                                <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (1).jpeg" alt="Quarto acolhedor">
-                            </div>
-                            <div class="gallery-thumb" onclick="swapMainImage('unidade3', 'unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (3).jpeg', 'Unidade 3 - Integração da varanda com ambiente interno')">
-                                <img src="unidade3/WhatsApp Image 2026-09-14 at 22.22.53 (3).jpeg" alt="Varanda vista interna">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -375,27 +488,46 @@
     <section id="biografia" class="bio-section">
         <!-- Canvas de Animação Geométrica de Fundo (Blueprint Elegante) -->
         <canvas id="bio-bg-canvas" class="section-blueprint-canvas" aria-hidden="true"></canvas>
-        <div class="container">
-            <div class="bio-grid">
-                
-                <div class="bio-photo-container">
-                    <div class="bio-photo-card" id="bioPhotoCard">
-                        <!-- Borda Animada SVG que carrega em volta da foto ao passar o mouse ou tocar -->
-                        <svg class="bio-svg-border" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect class="bio-border-rect" x="1.5" y="1.5" rx="27" ry="27"></rect>
-                        </svg>
+        <div class="container bio-container">
+            <div class="bio-3col-grid">
 
-                        <!-- Foto exibida com nitidez total e sem corte/sobreposição -->
-                        <div class="bio-portrait-display">
-                            <img src="img/WhatsApp Image 2026-09-14 at 13.39.10.jpeg" alt="Cristiane Alberti - Idealizadora da Reviva Senior's Residence" class="bio-portrait-img active">
-                        </div>
+                <!-- COLUNA ESQUERDA: PROPÓSITO & LIDERANÇA -->
+                <div class="bio-col bio-col-left">
+                    <div class="bio-reveal-item" data-delay="1">
+                        <h2 class="bio-title"><span class="highlight-mint">Cristiane</span> Alberti</h2>
+                    </div>
 
-                        <!-- Card de Identidade no rodapé da foto com visual premium -->
-                        <div class="bio-photo-badge">
-                            <div class="bio-badge-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="bio-badge-info">
+                    <div class="bio-reveal-item" data-delay="2">
+                        <p class="bio-text">
+                            Idealizadora da Reviva Senior’s, Cristiane Alberti é movida por um propósito inabalável:
+                            oferecer um envelhecimento com dignidade, conforto e segurança.
+                        </p>
+                    </div>
+
+                    <div class="bio-reveal-item" data-delay="3">
+                        <p class="bio-text">
+                            Sua sensibilidade e visão humanizada transformaram a assistência em missão de vida,
+                            inspirando toda a equipe a cuidar de cada residente como alguém da própria família.
+                        </p>
+                    </div>
+
+                    <div class="bio-cta-wrapper bio-reveal-item" data-delay="4">
+                        <a href="https://www.instagram.com/revivaseniors?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+                            target="_blank" class="btn btn-instagram bio-cta-btn" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i> Conhecer no Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COLUNA CENTRAL: FOTO CRIS EM DESTAQUE (IMG/CRIS.PNG) -->
+                <div class="bio-col bio-col-center">
+                    <div class="bio-cris-glow" aria-hidden="true"></div>
+                    <div class="bio-cris-wrapper">
+                        <img src="img/cris.png" alt="Cristiane Alberti - Idealizadora da Reviva Senior's Residence"
+                            class="bio-cris-cutout-img">
+                        <div class="bio-cris-badge">
+                            <div class="bio-badge-dot"></div>
+                            <div class="bio-badge-texts">
                                 <strong>Cristiane Alberti</strong>
                                 <span>Idealizadora da Reviva Senior’s</span>
                             </div>
@@ -403,23 +535,33 @@
                     </div>
                 </div>
 
-                <div class="bio-content">
-                    <h2 class="bio-title">Cristiane Alberti</h2>
-
-                    <div class="bio-quote">
-                        "O cuidado vai além da técnica: ele nasce do afeto. Um lugar onde o amor se traduz em ação."
+                <!-- COLUNA DIREITA: CITAÇÃO, TRAJETÓRIA & CONTATO -->
+                <div class="bio-col bio-col-right">
+                    <div class="bio-quote-card bio-reveal-item" data-delay="2">
+                        <i class="fas fa-quote-left quote-icon" aria-hidden="true"></i>
+                        <blockquote class="bio-quote-text" id="bioQuoteText">
+                            "O cuidado vai além da técnica: ele nasce do afeto. Um lugar onde o amor se traduz em ação."
+                        </blockquote>
                     </div>
 
-                    <p class="bio-text">
-                        Idealizadora da Reviva Senior’s, Cristiane Alberti é movida por um propósito claro: oferecer um envelhecimento digno, seguro e acolhedor. Sua sensibilidade e visão humanizada transformaram cuidado em missão de vida, inspirando toda a equipe a tratar cada residente como parte da família.
-                    </p>
+                    <div class="bio-reveal-item" data-delay="3">
+                        <p class="bio-text">
+                            Cris sempre acreditou que o cuidado vai além do protocolo clínico: ele nasce do afeto
+                            diário. Sua trajetória é marcada por empatia, escuta ativa e o desejo genuíno de fazer a
+                            diferença.
+                        </p>
+                    </div>
 
-                    <p class="bio-text">
-                        Cris sempre acreditou que o cuidado vai além da técnica ele nasce do afeto. Sua trajetória é marcada por empatia, escuta ativa e o desejo genuíno de fazer a diferença na vida dos idosos. É com esse olhar que ela construiu a Reviva: um lugar onde o amor se traduz em ação.
-                    </p>
+                    <div class="bio-reveal-item" data-delay="4">
+                        <p class="bio-text">
+                            É com esse olhar que ela construiu a Reviva: um condomínio onde o aconchego de um lar
+                            encontra o mais alto padrão de saúde e acessibilidade em Campinas.
+                        </p>
+                    </div>
 
-                    <div class="bio-cta-wrapper">
-                        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20os%20cuidados%20na%20Reviva%20Senior%27s" target="_blank" class="btn btn-whatsapp">
+                    <div class="bio-cta-wrapper bio-reveal-item" data-delay="5">
+                        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20os%20cuidados%20na%20Reviva%20Senior%27s"
+                            target="_blank" class="btn btn-whatsapp bio-cta-btn">
                             <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
                         </a>
                     </div>
@@ -432,23 +574,24 @@
     <!-- ==========================================================================
        SEÇÃO: DIFERENCIAIS & PILARES DO CUIDADO
        ========================================================================== -->
-    <section id="diferenciais" class="section section-warm">
+    <section id="diferenciais" class="section section-dark-luxury">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-star"></i> Padrão Reviva</span>
                 <h2 class="section-title">O Que Torna Nosso Cuidado Incomparável</h2>
                 <p class="section-subtitle">
-                    Oferecemos tranquilidade absoluta para as famílias e uma rotina viva, acolhedora e saudável para os nossos queridos residentes.
+                    Oferecemos tranquilidade absoluta para as famílias e uma rotina viva, acolhedora e saudável para os
+                    nossos queridos residentes.
                 </p>
             </div>
 
             <div class="pillars-grid">
-                
+
                 <div class="pillar-card">
                     <div class="pillar-icon-box"><i class="fas fa-heart-pulse"></i></div>
                     <h3 class="pillar-title">Enfermagem 24 Horas</h3>
                     <p class="pillar-desc">
-                        Plantão ininterrupto com enfermeiros e cuidadores capacitados para ministração pontual de medicações, controle de sinais vitais e primeiros socorros.
+                        Plantão ininterrupto com enfermeiros e cuidadores capacitados para ministração pontual de
+                        medicações, controle de sinais vitais e primeiros socorros.
                     </p>
                 </div>
 
@@ -456,7 +599,8 @@
                     <div class="pillar-icon-box"><i class="fas fa-utensils"></i></div>
                     <h3 class="pillar-title">Nutrição & Gastronomia</h3>
                     <p class="pillar-desc">
-                        6 refeições balanceadas por dia, elaboradas por nutricionista e preparadas com afeto para atender dietas normais, hipossódicas, pastosas ou diabéticas.
+                        6 refeições balanceadas por dia, elaboradas por nutricionista e preparadas com afeto para
+                        atender dietas normais, hipossódicas, pastosas ou diabéticas.
                     </p>
                 </div>
 
@@ -464,7 +608,8 @@
                     <div class="pillar-icon-box"><i class="fas fa-person-walking-with-cane"></i></div>
                     <h3 class="pillar-title">Fisioterapia & Mobilidade</h3>
                     <p class="pillar-desc">
-                        Exercícios preventivos e reabilitativos para manutenção da força muscular, equilíbrio, prevenção de quedas e ganho de independência motora.
+                        Exercícios preventivos e reabilitativos para manutenção da força muscular, equilíbrio, prevenção
+                        de quedas e ganho de independência motora.
                     </p>
                 </div>
 
@@ -472,7 +617,8 @@
                     <div class="pillar-icon-box"><i class="fas fa-music"></i></div>
                     <h3 class="pillar-title">Musicoterapia & Atividades</h3>
                     <p class="pillar-desc">
-                        Estímulo neurológico e emocional constante através de música, jogos cognitivos, artesanato, celebração de aniversários e datas comemorativas.
+                        Estímulo neurológico e emocional constante através de música, jogos cognitivos, artesanato,
+                        celebração de aniversários e datas comemorativas.
                     </p>
                 </div>
 
@@ -480,7 +626,8 @@
                     <div class="pillar-icon-box"><i class="fas fa-wheelchair"></i></div>
                     <h3 class="pillar-title">100% Adaptado</h3>
                     <p class="pillar-desc">
-                        Barras de apoio, corredores amplos, portas largas, rampas sem degraus e banheiros totalmente adaptados aos padrões de acessibilidade NBR 9050.
+                        Barras de apoio, corredores amplos, portas largas, rampas sem degraus e banheiros totalmente
+                        adaptados aos padrões de acessibilidade NBR 9050.
                     </p>
                 </div>
 
@@ -488,7 +635,8 @@
                     <div class="pillar-icon-box"><i class="fas fa-people-roof"></i></div>
                     <h3 class="pillar-title">Visitas Abertas & Família</h3>
                     <p class="pillar-desc">
-                        Acreditamos que o laço com a família é o melhor remédio. Incentivamos visitas acolhedoras com horários flexíveis e ampla comunicação com os parentes.
+                        Acreditamos que o laço com a família é o melhor remédio. Incentivamos visitas acolhedoras com
+                        horários flexíveis e ampla comunicação com os parentes.
                     </p>
                 </div>
 
@@ -496,215 +644,13 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       SEÇÃO: TERAPIAS & EQUIPE MULTIDISCIPLINAR (CUIDADOS INTEGRADOS)
-       ========================================================================== -->
-    <section id="terapias" class="section section-sage">
-        <div class="container">
-
-            <!-- ==========================================================================
-               BLOCO: TERAPIAS & EQUIPE MULTIDISCIPLINAR (CUIDADOS INTEGRADOS)
-               ========================================================================== -->
-            <div class="care-block-container">
-                <canvas id="care-bg-canvas" class="care-bg-canvas" aria-hidden="true"></canvas>
-                
-                <div class="care-block-header">
-                    <span class="section-tag"><i class="fas fa-heart-pulse"></i> Equipe Multidisciplinar</span>
-                    <h2 class="care-block-title">Cuidados Especializados & Terapias Integradas</h2>
-                    <p class="care-block-subtitle">
-                        Mais do que assistência clínica, oferecemos estímulos diários para corpo, mente e coração com profissionais dedicados ao envelhecimento ativo, seguro e afetuoso.
-                    </p>
-                </div>
-
-                <div class="care-grid">
-                    
-                    <!-- 1. Médico Clínico -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-stethoscope"></i>
-                            </div>
-                            <span class="care-tag">Saúde & Prevenção</span>
-                            <h4 class="care-title">Acompanhamento Médico</h4>
-                            <p class="care-desc">
-                                Acompanhamento regular com profissionais experientes garante o monitoramento contínuo da saúde, prevenção de doenças e rápida resposta em situações clínicas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 2. Fisioterapia -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-person-walking"></i>
-                            </div>
-                            <span class="care-tag">Mobilidade Ativa</span>
-                            <h4 class="care-title">Fisioterapia</h4>
-                            <p class="care-desc">
-                                Atividades de reabilitação e mobilidade que preservam a autonomia, fortalecem o corpo e ajudam na prevenção de quedas, dores e limitações motoras.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 3. Nutricionista -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-apple-whole"></i>
-                            </div>
-                            <span class="care-tag">Nutrição & Gastronomia</span>
-                            <h4 class="care-title">Nutricionista</h4>
-                            <p class="care-desc">
-                                Alimentação balanceada, personalizada às necessidades de cada residente, com foco em saúde, paladar e qualidade de vida em todas as fases do envelhecimento.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 4. Terapia Ocupacional -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-puzzle-piece"></i>
-                            </div>
-                            <span class="care-tag">Cognição & Autonomia</span>
-                            <h4 class="care-title">Terapia Ocupacional</h4>
-                            <p class="care-desc">
-                                Estímulo às funções cognitivas e habilidades práticas por meio de atividades dirigidas, promovendo autonomia, socialização e um envelhecimento ativo.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 5. Musicoterapia -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-music"></i>
-                            </div>
-                            <span class="care-tag">Estímulo Afetivo</span>
-                            <h4 class="care-title">Musicoterapia</h4>
-                            <p class="care-desc">
-                                Atividades sonoras e estímulos musicais que despertam memórias afetivas, estimulam a cognição, reduzem a ansiedade e promovem momentos de integração e relaxamento.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 6. Pet Terapia -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-paw"></i>
-                            </div>
-                            <span class="care-tag">Afeto & Conexão</span>
-                            <h4 class="care-title">Pet Terapia</h4>
-                            <p class="care-desc">
-                                Interação acolhedora e guiada com animais dóceis, proporcionando bem-estar emocional instantâneo, alívio do estresse e uma conexão genuína de carinho.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 7. Apoio Psicológico & Terapia Emocional -->
-                    <div class="care-card spotlight-card">
-                        <div class="care-card-spotlight"></div>
-                        <div class="care-card-content">
-                            <div class="care-icon-box">
-                                <i class="fas fa-head-side-heart"></i>
-                            </div>
-                            <span class="care-tag">Saúde Emocional</span>
-                            <h4 class="care-title">Apoio Psicológico</h4>
-                            <p class="care-desc">
-                                Apoio emocional essencial que acolhe, escuta e auxilia no enfrentamento das mudanças e desafios da vida, promovendo autoestima e bem-estar psicológico.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       SEÇÃO: DEPOIMENTOS DE FAMILIARES
-       ========================================================================== -->
-    <section id="depoimentos" class="section section-warm">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-quote-left"></i> Histórias Reais</span>
-                <h2 class="section-title">A Paz de Espírito das Famílias</h2>
-                <p class="section-subtitle">
-                    Saiba o que dizem os filhos e netos que confiam o cuidado de quem mais amam à nossa equipe.
-                </p>
-            </div>
-
-            <div class="testimonials-grid">
-                
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "A Cristiane e toda a equipe da Reviva devolveram a alegria de viver da minha mãe. Ela estava depressiva em casa e agora participa das cantorias, adora o jardim e está muito bem cuidada!"
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h5>Mariana Silveira</h5>
-                            <span>Filha da Sra. Alice (Unidade 2)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "O fato de ser gerida por uma enfermeira especializada me deu 100% de segurança. O controle dos medicamentos e o carinho com o meu pai são impecáveis. Recomendo de olhos fechados."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-info">
-                            <h5>Ricardo Mendonça</h5>
-                            <span>Filho do Sr. José (Unidade 1)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "A casa é ampla, limpa, cheia de plantas e luz do sol. Não tem nada a ver com aquele clima frio de hospital. É um ambiente de carinho e paz verdadeira."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">C</div>
-                        <div class="author-info">
-                            <h5>Camila Vasconcelos</h5>
-                            <span>Neta da D. Lourdes (Unidade 3)</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!-- ==========================================================================
        SEÇÃO: DÚVIDAS FREQUENTES (FAQ)
        ========================================================================== -->
-    <section id="duvidas" class="section section-sage">
+    <section id="duvidas" class="section section-dark-luxury">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-circle-question"></i> Esclarecimentos</span>
                 <h2 class="section-title">Perguntas Frequentes</h2>
                 <p class="section-subtitle">
                     Tire suas dúvidas sobre rotina, visitação e admissão na Reviva Senior's Residence.
@@ -712,14 +658,16 @@
             </div>
 
             <div class="faq-container">
-                
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Como funcionam as visitas dos familiares?</span>
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Incentivamos e valorizamos profundamente a presença da família! Nossas visitas são livres dentro dos horários recomendados para preservar a rotina de descanso e refeições dos idosos. Parentes e amigos são sempre muito bem-vindos nos jardins e salas de estar.</p>
+                        <p>Incentivamos e valorizamos profundamente a presença da família! Nossas visitas são livres
+                            dentro dos horários recomendados para preservar a rotina de descanso e refeições dos idosos.
+                            Parentes e amigos são sempre muito bem-vindos nos jardins e salas de estar.</p>
                     </div>
                 </div>
 
@@ -729,7 +677,9 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Sim! Contamos com equipe de enfermagem presente 24 horas por dia em todas as unidades, sob coordenação direta da Enfermeira Especializada Cristiane Alberti. Toda a medicação é controlada rigorosamente segundo a prescrição do médico do residente.</p>
+                        <p>Sim! Contamos com equipe de enfermagem presente 24 horas por dia em todas as unidades, sob
+                            coordenação direta da Enfermeira Especializada Cristiane Alberti. Toda a medicação é
+                            controlada rigorosamente segundo a prescrição do médico do residente.</p>
                     </div>
                 </div>
 
@@ -739,7 +689,10 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Nossos cardápios são planejados por nutricionistas e preparados diariamente em cozinhas profissionais. São servidas 6 refeições por dia (café da manhã, lanche matinal, almoço, lanche da tarde, jantar e ceia), adaptadas às necessidades de cada idoso (baixo teor de sal, sem açúcar, pastosa, etc.).</p>
+                        <p>Nossos cardápios são planejados por nutricionistas e preparados diariamente em cozinhas
+                            profissionais. São servidas 6 refeições por dia (café da manhã, lanche matinal, almoço,
+                            lanche da tarde, jantar e ceia), adaptadas às necessidades de cada idoso (baixo teor de sal,
+                            sem açúcar, pastosa, etc.).</p>
                     </div>
                 </div>
 
@@ -749,7 +702,11 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Todas as nossas 3 unidades estão situadas no Taquaral em Campinas e compartilham da mesma diretriz técnica de enfermagem e carinho. A Unidade 1 conta com solarium e quartos amplos; a Unidade 2 possui lindo jardim com fonte e rampa acessível frontal; e a Unidade 3 se destaca pela varanda ampla e ambiente rodeado de verde. Em sua visita, você poderá conhecer e escolher a que melhor se adequa ao perfil do seu familiar.</p>
+                        <p>Todas as nossas 3 unidades estão situadas no Taquaral em Campinas e compartilham da mesma
+                            diretriz técnica de enfermagem e carinho. A Unidade 1 conta com solarium e quartos amplos; a
+                            Unidade 2 possui lindo jardim com fonte e rampa acessível frontal; e a Unidade 3 se destaca
+                            pela varanda ampla e ambiente rodeado de verde. Em sua visita, você poderá conhecer e
+                            escolher a que melhor se adequa ao perfil do seu familiar.</p>
                     </div>
                 </div>
 
@@ -759,7 +716,9 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Basta preencher o formulário abaixo ou clicar diretamente no botão de WhatsApp para falar conosco. Agendamos uma visita guiada no dia e horário mais convenientes para você conhecer as instalações, tomar um café e conversar com a nossa equipe.</p>
+                        <p>Basta preencher o formulário abaixo ou clicar diretamente no botão de WhatsApp para falar
+                            conosco. Agendamos uma visita guiada no dia e horário mais convenientes para você conhecer
+                            as instalações, tomar um café e conversar com a nossa equipe.</p>
                     </div>
                 </div>
 
@@ -773,89 +732,53 @@
     <section id="agendamento" class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                
+
                 <div class="contact-info-col">
-                    <span class="bio-tag"><i class="fas fa-door-open"></i> Portas Abertas</span>
-                    <h2>Venha Tomar um Café Conosco e Conhecer Nossas Casas</h2>
-                    <p>
-                        A melhor maneira de sentir o aconchego e a segurança da Reviva é visitando nossas unidades pessoalmente. Escolha a unidade mais conveniente e venha conversar com a nossa equipe.
+                    <h2>Venha Conhecer de Perto Nossas Casas e Nosso Cuidado</h2>
+                    <p class="contact-lead-desc">
+                        A melhor maneira de sentir o aconchego, a infraestrutura e a segurança da Reviva é visitando nossas unidades pessoalmente.
                     </p>
-
-                    <div class="contact-methods">
-                        <div class="contact-method-item">
-                            <div class="contact-method-icon"><i class="fab fa-whatsapp"></i></div>
-                            <div class="contact-method-text">
-                                <h5>WhatsApp Direto</h5>
-                                <p>Fale diretamente com nossa coordenação</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method-item">
-                            <div class="contact-method-icon"><i class="fas fa-map-location-dot"></i></div>
-                            <div class="contact-method-text">
-                                <h5>Bairro Taquaral — Campinas/SP</h5>
-                                <p>3 Casas próximas e de fácil acesso</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method-item">
-                            <div class="contact-method-icon"><i class="fas fa-clock"></i></div>
-                            <div class="contact-method-text">
-                                <h5>Horário de Visitas & Atendimento</h5>
-                                <p>Segunda a Sábado com agendamento prévio</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20imediatas%20sobre%20as%20unidades%20da%20Reviva" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp Agora
-                    </a>
+                    <p class="contact-sub-desc">
+                        Nossa coordenação técnica e equipe de enfermagem estão à disposição para receber você e sua família, esclarecer todas as dúvidas e apresentar cada ambiente com transparência e carinho.
+                    </p>
                 </div>
 
                 <div class="contact-form-card contact-direct-box">
-                    <div class="direct-zap-badge">
-                        <i class="fab fa-whatsapp"></i> Atendimento Rápido & Sem Burocracia
-                    </div>
                     <h3 class="form-title">Fale Conosco Direto pelo WhatsApp</h3>
                     <p class="form-subtitle">
-                        Não precisa preencher nenhum formulário. Basta clicar no botão abaixo para conversar em tempo real com nossa equipe e agendar sua visita:
+                        Não precisa preencher nenhum formulário. Escolha a unidade que deseja conhecer ou fale em tempo real com nossa equipe para agendar sua visita:
                     </p>
 
-                    <!-- Botão Principal Gigante de Conversão -->
-                    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades%20da%20Reviva%20e%20agendar%20uma%20visita." target="_blank" class="btn btn-whatsapp zap-cta-big">
-                        <i class="fab fa-whatsapp"></i>
-                        <div class="zap-btn-text">
-                            <span class="zap-title">Chamar no WhatsApp Agora</span>
-                            <span class="zap-sub">Clique aqui para falar com a equipe</span>
-                        </div>
-                    </a>
-
                     <div class="direct-units-section">
-                        <span class="direct-units-title">Ou escolha a unidade que deseja visitar:</span>
+                        <span class="direct-units-title">Escolha a unidade que deseja visitar:</span>
                         <div class="direct-units-buttons">
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%201%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20689)" target="_blank" class="unit-zap-btn">
+                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%201%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20689)"
+                                target="_blank" class="unit-zap-btn">
                                 <i class="fas fa-house-user"></i>
                                 <span>Unidade 1 (Rua Fernão de Magalhães, 689)</span>
                             </a>
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%202%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20809)" target="_blank" class="unit-zap-btn">
+                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%202%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20809)"
+                                target="_blank" class="unit-zap-btn">
                                 <i class="fas fa-sun"></i>
                                 <span>Unidade 2 (Rua Fernão de Magalhães, 809)</span>
                             </a>
-                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%203%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20740)" target="_blank" class="unit-zap-btn">
+                            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%203%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20740)"
+                                target="_blank" class="unit-zap-btn">
                                 <i class="fas fa-seedling"></i>
                                 <span>Unidade 3 (Rua Fernão de Magalhães, 740)</span>
                             </a>
                         </div>
                     </div>
 
-                    <div class="direct-zap-footer">
-                        <div class="zap-guarantee-item">
-                            <i class="fas fa-bolt"></i> Resposta rápida no seu celular
+                    <!-- Botão Principal de Conversão WhatsApp (Posicionado por último) -->
+                    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades%20da%20Reviva%20e%20agendar%20uma%20visita."
+                        target="_blank" class="btn btn-whatsapp zap-cta-big">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="zap-btn-text">
+                            <span class="zap-title">Chamar no WhatsApp Agora</span>
+                            <span class="zap-sub">Clique aqui para falar com a equipe</span>
                         </div>
-                        <div class="zap-guarantee-item">
-                            <i class="fas fa-user-nurse"></i> Orientação de enfermagem especializada
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
@@ -868,25 +791,32 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                
+
                 <div class="footer-brand">
-                    <img src="img/301858108_578442737058922_7695860622089312756_n.jpg" alt="Logo Reviva Senior's Residence">
+                    <img src="img/logo2.png"
+                        alt="Logo Reviva Senior's Residence">
                     <p>
-                        Instituição de Longa Permanência e Centro-Dia para Idosos, liderada por Enfermeira Especializada. Oferecendo qualidade de vida, amor, acolhimento e assistência 24h em Campinas - SP.
+                        Instituição de Longa Permanência e Centro Dia para Idosos, liderada por enfermeira
+                        especializada. Oferecendo qualidade de vida, amor, acolhimento e assistência 24h em Campinas, São Paulo.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/5519999999999" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/revivaseniors" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5519999999999" target="_blank" class="social-link"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h4>Atendimento</h4>
                     <p style="font-size: 0.9rem; color: #a4c4ad; margin-bottom: 14px;">
-                        Entre em contato conosco para agendar visitas ou obter esclarecimentos detalhados sobre nossos serviços.
+                        Entre em contato conosco para agendar visitas ou obter esclarecimentos detalhados sobre nossos
+                        serviços.
                     </p>
-                    <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-outline-light" style="width: 100%; margin-bottom: 12px;">
+                    <a href="https://wa.me/5519999999999" target="_blank" class="btn btn-outline-light"
+                        style="width: 100%; margin-bottom: 12px;">
                         <i class="fab fa-whatsapp"></i> Enviar Mensagem
                     </a>
                     <span style="font-size: 0.8rem; color: #9abfa2; display: block; text-align: center;">
@@ -897,7 +827,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Reviva Senior's Residence. Todos os direitos reservados. Cuidado humanizado para a terceira idade.</p>
+                <p>&copy; 2026 Reviva Senior's Residence. Todos os direitos reservados. Cuidado humanizado para a
+                    terceira idade.</p>
             </div>
         </div>
     </footer>
@@ -916,12 +847,13 @@
     <!-- ==========================================================================
        BOTÃO FLUTUANTE DE WHATSAPP
        ========================================================================== -->
-    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Reviva%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades" class="whatsapp-floating" target="_blank" aria-label="Falar pelo WhatsApp">
+    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Reviva%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades"
+        class="whatsapp-floating" target="_blank" aria-label="Falar pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js?v=6"></script>
 </body>
 
 </html>

@@ -5,17 +5,82 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initHeroVideo();
+    initHeroTypewriter();
     initHeaderScroll();
     initMobileMenu();
-    initUnitsTabs();
+    initUnitsCarousel();
     initFaqAccordion();
     initHeroLeafAnimation();
     initBlueprintCanvasAnimation('unidades-bg-canvas');
     initBlueprintCanvasAnimation('bio-bg-canvas');
-    initAnimatedPhotoBorder();
+    initBioAnimations();
     initSpotlightCards();
-    initCareParticlesAnimation('care-bg-canvas');
+    initScrollTriggerAnimations();
 });
+
+/* ==========================================================================
+   0. VÍDEO DE FUNDO DO HERO (AUTOPLAY & LOOP SEGURO)
+   ========================================================================== */
+function initHeroVideo() {
+    const video = document.querySelector('.hero-bg-video');
+    if (!video) return;
+    video.muted = true;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // Autoplay seguro caso o navegador exija interação
+        });
+    }
+}
+
+/* ==========================================================================
+   0.1 EFEITO TYPEWRITER NO HERO (DIGITA E APAGA)
+   ========================================================================== */
+function initHeroTypewriter() {
+    const el = document.getElementById('heroTypewriter');
+    if (!el) return;
+
+    // Palavras que alternam com animação suave de digitação e apagamento
+    const words = [
+        "Taquaral",
+        "Taquaral, Campinas",
+        "bairro Taquaral"
+    ];
+
+    let wordIdx = 0;
+    let charIdx = words[0].length;
+    let isDeleting = true; // Já inicia preenchido com a primeira palavra e prepara para apagar após a pausa
+
+    // Pausa inicial confortável antes de começar a apagar pela primeira vez (2.2s)
+    setTimeout(typeLoop, 2200);
+
+    function typeLoop() {
+        const currentWord = words[wordIdx];
+
+        if (isDeleting) {
+            charIdx--;
+            el.textContent = currentWord.substring(0, charIdx);
+        } else {
+            charIdx++;
+            el.textContent = currentWord.substring(0, charIdx);
+        }
+
+        let speed = isDeleting ? 48 : 88;
+
+        // Se terminou de digitar a palavra inteira
+        if (!isDeleting && charIdx === currentWord.length) {
+            speed = 2400; // Tempo de pausa exibindo a palavra completa
+            isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+            isDeleting = false;
+            wordIdx = (wordIdx + 1) % words.length;
+            speed = 420; // Pausa antes de digitar a próxima palavra
+        }
+
+        setTimeout(typeLoop, speed);
+    }
+}
 
 /* ==========================================================================
    1. HEADER SCROLL EFFECT
@@ -70,145 +135,432 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   3. ABAS DAS UNIDADES (UNIDADE 1, UNIDADE 2, UNIDADE 3)
+   3. CARROSSEL DE CONDOMÍNIOS (ESTILO NETFLIX COM PRÉVIA ESCURA)
    ========================================================================== */
-function initUnitsTabs() {
-    const tabButtons = document.querySelectorAll('.unit-tab-btn');
-    const contentPanes = document.querySelectorAll('.unit-content-pane');
+let currentUnitIndex = 0;
+const totalUnits = 3;
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetUnit = button.getAttribute('data-unit');
+function initUnitsCarousel() {
+    const track = document.getElementById('unitsSliderTrack');
+    const prevBtn = document.getElementById('unitsPrevBtn');
+    const nextBtn = document.getElementById('unitsNextBtn');
+    const wrapper = document.getElementById('unitsCarouselWrapper');
 
-            // Remover classe ativa de todos os botões e painéis
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            contentPanes.forEach(pane => pane.classList.remove('active'));
+    if (!track) return;
 
-            // Ativar o clicado
-            button.classList.add('active');
-            const targetPane = document.getElementById(`pane-${targetUnit}`);
-            if (targetPane) {
-                targetPane.classList.add('active');
+    // Criar clone da Unidade 1 no final para que a Unidade 3 também mostre a prévia da Unidade 1 na direita
+    const originalSlides = Array.from(track.querySelectorAll('.unit-slide'));
+    if (originalSlides.length > 0 && !track.querySelector('.unit-slide-clone')) {
+        const firstClone = originalSlides[0].cloneNode(true);
+        firstClone.classList.add('unit-slide-clone');
+        firstClone.classList.remove('active');
+        firstClone.removeAttribute('id');
+        firstClone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+        firstClone.setAttribute('data-index', '0');
+        track.appendChild(firstClone);
+    }
+
+    function getSlideStep() {
+        const firstSlide = track.querySelector('.unit-slide');
+        if (!firstSlide) return 0;
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+        return firstSlide.offsetWidth + gap;
+    }
+
+    let isTransitioning = false;
+
+    function updateSlideStates(activeIdx) {
+        const allSlides = Array.from(track.querySelectorAll('.unit-slide'));
+        allSlides.forEach((slide, idx) => {
+            if (idx === activeIdx) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
             }
         });
+    }
+
+
+
+    // ==========================================================================
+    // ==========================================================================
+    // AUTO-PLAY CONTÍNUO: CICLO FOTO 1 -> 2 -> 3 -> 4 E AVANÇO AUTOMÁTICO DE BLOCO
+    // ==========================================================================
+    const PHOTO_DISPLAY_TIME = 2600; // 2.6 segundos por imagem
+    let autoPlayTimer = null;
+    let currentPhotoIndex = 0;
+    let isHovered = false;
+    let isSectionVisible = true;
+
+    function getActiveSlideElement() {
+        const slides = Array.from(track.querySelectorAll('.unit-slide'));
+        return slides[currentUnitIndex] || slides[0];
+    }
+
+    function getThumbsForSlide(slideEl) {
+        if (!slideEl) return [];
+        return Array.from(slideEl.querySelectorAll('.gallery-thumb'));
+    }
+
+    function switchPhotoInCurrentUnit(photoIdx) {
+        const slide = getActiveSlideElement();
+        if (!slide) return;
+        const thumbs = getThumbsForSlide(slide);
+        if (thumbs.length === 0) return;
+
+        currentPhotoIndex = Math.max(0, Math.min(photoIdx, thumbs.length - 1));
+        const targetThumb = thumbs[currentPhotoIndex];
+        if (targetThumb) {
+            targetThumb.click();
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        if (isHovered || !isSectionVisible) return;
+
+        autoPlayTimer = setTimeout(() => {
+            if (isHovered || !isSectionVisible) return;
+
+            const slide = getActiveSlideElement();
+            const thumbs = getThumbsForSlide(slide);
+            const totalPhotos = thumbs.length || 4;
+
+            if (currentPhotoIndex < totalPhotos - 1) {
+                // Passa para a próxima imagem dentro do condomínio atual (1 -> 2 -> 3 -> 4)
+                currentPhotoIndex++;
+                switchPhotoInCurrentUnit(currentPhotoIndex);
+                startAutoPlay();
+            } else {
+                // Chegou na última imagem (4ª imagem): troca para o próximo bloco de condomínio!
+                currentPhotoIndex = 0;
+                goToSlide(currentUnitIndex + 1);
+            }
+        }, PHOTO_DISPLAY_TIME);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearTimeout(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function restartAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    function goToSlide(targetIndex) {
+        if (isTransitioning) return;
+        const step = getSlideStep();
+        currentPhotoIndex = 0; // Sempre inicia na 1ª foto ao mudar de bloco
+
+        // Se estiver no último slide (Unidade 3) e avançar -> vai para o clone da Unidade 1
+        if (targetIndex >= totalUnits) {
+            isTransitioning = true;
+            currentUnitIndex = 0; // Visualmente volta para a Unidade 1
+
+            // Prepara a 1ª foto no clone
+            const allSlides = Array.from(track.querySelectorAll('.unit-slide'));
+            const cloneSlide = allSlides[totalUnits];
+            if (cloneSlide) {
+                const cloneThumbs = getThumbsForSlide(cloneSlide);
+                if (cloneThumbs[0]) cloneThumbs[0].click();
+            }
+
+            track.style.transition = 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
+            track.style.transform = `translateX(-${totalUnits * step}px)`;
+
+            updateSlideStates(totalUnits); // Ativa o clone durante o deslize
+
+            const onTransitionEnd = () => {
+                track.removeEventListener('transitionend', onTransitionEnd);
+                // Reseta silenciosamente para o slide real 0
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0px)';
+                updateSlideStates(0);
+                switchPhotoInCurrentUnit(0);
+                track.offsetHeight; // Forçar reflow síncrono
+                track.style.transition = '';
+                isTransitioning = false;
+                restartAutoPlay();
+            };
+            track.addEventListener('transitionend', onTransitionEnd);
+            return;
+        }
+
+        if (targetIndex < 0) {
+            targetIndex = totalUnits - 1;
+        }
+
+        currentUnitIndex = targetIndex;
+
+        // Ativa a 1ª foto do slide que está entrando
+        const allSlides = Array.from(track.querySelectorAll('.unit-slide'));
+        const nextSlide = allSlides[currentUnitIndex];
+        if (nextSlide) {
+            const nextThumbs = getThumbsForSlide(nextSlide);
+            if (nextThumbs[0]) nextThumbs[0].click();
+        }
+
+        track.style.transition = 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
+        track.style.transform = `translateX(-${currentUnitIndex * step}px)`;
+        updateSlideStates(currentUnitIndex);
+        restartAutoPlay();
+    }
+
+    // Botão da Direita: Passa para o próximo bloco
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentUnitIndex + 1);
+        });
+    }
+
+    // Botão da Esquerda: Volta para o bloco anterior
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentUnitIndex - 1);
+        });
+    }
+
+    // Clique direto no bloco de prévia escuro para avançar
+    track.addEventListener('click', (e) => {
+        const overlay = e.target.closest('.unit-slide-dark-overlay');
+        if (overlay) {
+            e.preventDefault();
+            goToSlide(currentUnitIndex + 1);
+            return;
+        }
+
+        // Clique manual em qualquer miniatura sincroniza o índice e continua o ciclo
+        const thumb = e.target.closest('.gallery-thumb');
+        if (thumb) {
+            const thumbsContainer = thumb.closest('.unit-gallery-thumbs');
+            if (thumbsContainer) {
+                const thumbsList = Array.from(thumbsContainer.querySelectorAll('.gallery-thumb'));
+                const clickedIdx = thumbsList.indexOf(thumb);
+                if (clickedIdx !== -1) {
+                    currentPhotoIndex = clickedIdx;
+                    restartAutoPlay();
+                }
+            }
+        }
     });
+
+    // Pausar autoplay quando o mouse estiver sobre o carrossel e retomar ao sair
+    if (wrapper) {
+        wrapper.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopAutoPlay();
+            wrapper.classList.add('autoplay-paused');
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            isHovered = false;
+            wrapper.classList.remove('autoplay-paused');
+            startAutoPlay();
+        });
+
+        // Suporte para teclas de seta do teclado (ArrowRight / ArrowLeft)
+        wrapper.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                goToSlide(currentUnitIndex + 1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goToSlide(currentUnitIndex - 1);
+            }
+        });
+    }
+
+    // Pausar quando o usuário trocar de aba para poupar recursos
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (!isHovered && isSectionVisible) {
+            startAutoPlay();
+        }
+    });
+
+    // Suporte a gestos touch/swipe no celular
+    let startX = 0;
+    let isSwiping = false;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+        stopAutoPlay();
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const diffX = e.changedTouches[0].clientX - startX;
+        if (diffX < -45) {
+            goToSlide(currentUnitIndex + 1); // Arrastou para a esquerda -> Próximo
+        } else if (diffX > 45) {
+            goToSlide(currentUnitIndex - 1); // Arrastou para a direita -> Anterior
+        } else {
+            startAutoPlay();
+        }
+    }, { passive: true });
+
+    // Recalcular posicionamento no redimensionamento da janela
+    window.addEventListener('resize', () => {
+        const step = getSlideStep();
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${currentUnitIndex * step}px)`;
+    });
+
+    // Iniciar autoplay somente quando a seção estiver visível na tela
+    const sectionUnidades = document.getElementById('unidades');
+    if (sectionUnidades && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isSectionVisible = entry.isIntersecting;
+                if (isSectionVisible && !isHovered) {
+                    if (wrapper) wrapper.classList.remove('autoplay-paused');
+                    startAutoPlay();
+                } else {
+                    if (wrapper) wrapper.classList.add('autoplay-paused');
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.2 });
+        observer.observe(sectionUnidades);
+    } else {
+        startAutoPlay();
+    }
+
+    // Inicializar estado ativo
+    updateSlideStates(0);
+
+    // Expor globalmente para eventual chamada externa
+    window.goToUnitSlide = goToSlide;
 }
 
 /* Troca da imagem principal ao clicar na miniatura da galeria */
 function swapMainImage(unitId, imgSrc, captionText) {
-    const mainImg = document.getElementById(`mainImg-${unitId}`);
-    if (mainImg) {
-        mainImg.style.opacity = '0.4';
-        setTimeout(() => {
-            mainImg.src = imgSrc;
-            mainImg.style.opacity = '1';
-        }, 150);
+    let targetSlide = document.querySelector('.unit-slide.active');
+    if (!targetSlide || !targetSlide.id.includes(unitId)) {
+        targetSlide = document.getElementById(`pane-${unitId}`) || targetSlide;
+    }
 
-        // Atualizar o clique do container principal para abrir o lightbox correto
-        const mainContainer = mainImg.parentElement;
-        if (mainContainer) {
-            mainContainer.setAttribute('onclick', `openLightbox('${imgSrc}', '${captionText}')`);
+    if (targetSlide) {
+        const mainImg = targetSlide.querySelector('.unit-gallery-main img');
+        if (mainImg) {
+            mainImg.style.opacity = '0.35';
+            setTimeout(() => {
+                mainImg.src = imgSrc;
+                mainImg.style.opacity = '1';
+            }, 120);
+
+            const mainContainer = mainImg.parentElement;
+            if (mainContainer) {
+                mainContainer.setAttribute('onclick', `openLightbox('${imgSrc}', '${captionText.replace(/'/g, "\\'")}')`);
+            }
+        }
+
+        const thumbs = targetSlide.querySelectorAll('.gallery-thumb');
+        thumbs.forEach(thumb => {
+            const thumbImg = thumb.querySelector('img');
+            if (thumbImg && (thumbImg.getAttribute('src') === imgSrc || thumbImg.src.includes(imgSrc))) {
+                thumb.classList.remove('active');
+                void thumb.offsetWidth; // Força reflow para reiniciar do zero a barra e o efeito de carregamento
+                thumb.classList.add('active');
+            } else {
+                thumb.classList.remove('active');
+            }
+        });
+    } else {
+        const mainImg = document.getElementById(`mainImg-${unitId}`);
+        if (mainImg) {
+            mainImg.style.opacity = '0.35';
+            setTimeout(() => {
+                mainImg.src = imgSrc;
+                mainImg.style.opacity = '1';
+            }, 120);
+        }
+    }
+}
+
+/* ==========================================================================
+   BIOGRAFIA DA FUNDADORA (CRISTIANE ALBERTI): ANIMAÇÃO E DIGITAÇÃO
+   ========================================================================== */
+function initBioAnimations() {
+    const bioSection = document.getElementById('biografia');
+    const quoteEl = document.getElementById('bioQuoteText');
+    if (!bioSection) return;
+
+    const fullQuote = '"O cuidado vai além da técnica: ele nasce do afeto. Um lugar onde o amor se traduz em ação."';
+    let typingTimer = null;
+    let initialDelayTimer = null;
+
+    function resetBio() {
+        bioSection.classList.remove('is-visible');
+        if (typingTimer) {
+            clearTimeout(typingTimer);
+            typingTimer = null;
+        }
+        if (initialDelayTimer) {
+            clearTimeout(initialDelayTimer);
+            initialDelayTimer = null;
+        }
+        if (quoteEl) {
+            quoteEl.classList.remove('typing');
+            quoteEl.textContent = '';
         }
     }
 
-    // Atualizar estado ativo dos thumbnails
-    const currentPane = document.getElementById(`pane-${unitId}`);
-    if (currentPane) {
-        const thumbs = currentPane.querySelectorAll('.gallery-thumb');
-        thumbs.forEach(thumb => thumb.classList.remove('active'));
-        
-        // Ativar o thumbnail correspondente
-        thumbs.forEach(thumb => {
-            const thumbImg = thumb.querySelector('img');
-            if (thumbImg && thumbImg.src.includes(imgSrc)) {
-                thumb.classList.add('active');
+    function playBio() {
+        resetBio();
+
+        // Força reflow no elemento para reiniciar o pipeline de animações/transições CSS
+        void bioSection.offsetWidth;
+
+        // Dispara a entrada suave dos textos da esquerda e da direita
+        bioSection.classList.add('is-visible');
+
+        // Animação de digitação de letras na citação lateral
+        if (quoteEl) {
+            quoteEl.textContent = '';
+            quoteEl.classList.add('typing');
+            let charIndex = 0;
+
+            function typeChar() {
+                if (!bioSection.classList.contains('is-visible')) return;
+                if (charIndex < fullQuote.length) {
+                    quoteEl.textContent += fullQuote.charAt(charIndex);
+                    charIndex++;
+                    typingTimer = setTimeout(typeChar, 42);
+                } else {
+                    quoteEl.classList.remove('typing');
+                }
+            }
+
+            // Inicia a digitação suave com ritmo calmo e cadenciado
+            initialDelayTimer = setTimeout(typeChar, 750);
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                playBio();
+            } else {
+                resetBio();
             }
         });
-    }
-}
-
-/* ==========================================================================
-   FOTOS DA IDEALIZADORA (CRISTIANE ALBERTI)
-   ========================================================================== */
-function switchBioPhoto(photoIndex) {
-    const img1 = document.getElementById('bioPortrait1');
-    const img2 = document.getElementById('bioPortrait2');
-    const tab1 = document.getElementById('bioTab1');
-    const tab2 = document.getElementById('bioTab2');
-
-    if (!img1 || !img2) return;
-
-    if (photoIndex === 1) {
-        img1.classList.add('active');
-        img2.classList.remove('active');
-        if (tab1) tab1.classList.add('active');
-        if (tab2) tab2.classList.remove('active');
-    } else {
-        img1.classList.remove('active');
-        img2.classList.add('active');
-        if (tab1) tab1.classList.remove('active');
-        if (tab2) tab2.classList.add('active');
-    }
-}
-
-/* ==========================================================================
-   BORDA VERDE ANIMADA AO PASSAR O MOUSE OU TOCAR NA FOTO (CRISTIANE ALBERTI)
-   Efeito idêntico ao carregamento de borda perimetral do Diamond Vidros
-   ========================================================================== */
-function initAnimatedPhotoBorder() {
-    const card = document.getElementById('bioPhotoCard');
-    if (!card) return;
-    const rect = card.querySelector('.bio-border-rect');
-    if (!rect) return;
-
-    function updateBorderGeometry() {
-        const w = card.offsetWidth;
-        const h = card.offsetHeight;
-        if (w === 0 || h === 0) return;
-
-        rect.setAttribute('width', Math.max(0, w - 3));
-        rect.setAttribute('height', Math.max(0, h - 3));
-
-        const perimeter = rect.getTotalLength();
-        rect.style.strokeDasharray = perimeter;
-        rect.style.strokeDashoffset = perimeter;
-        card.dataset.perimeter = perimeter;
-    }
-
-    // Inicialização e recálculo
-    setTimeout(updateBorderGeometry, 120);
-    window.addEventListener('resize', updateBorderGeometry);
-
-    const startLoading = () => {
-        rect.style.strokeDashoffset = '0';
-    };
-
-    const stopLoading = () => {
-        const perimeter = card.dataset.perimeter || rect.getTotalLength();
-        rect.style.strokeDashoffset = perimeter;
-    };
-
-    // Eventos Desktop (Hover / Mouse)
-    card.addEventListener('mouseenter', startLoading);
-    card.addEventListener('mouseleave', stopLoading);
-
-    // Eventos Mobile ("passar o dedo em cima / apertar")
-    let touchTimeout = null;
-    card.addEventListener('touchstart', () => {
-        startLoading();
-        if (touchTimeout) clearTimeout(touchTimeout);
-    }, { passive: true });
-
-    card.addEventListener('touchend', () => {
-        touchTimeout = setTimeout(stopLoading, 1600);
+    }, { 
+        threshold: 0.12,
+        rootMargin: '0px 0px -30px 0px'
     });
 
-    // Clique direto
-    card.addEventListener('click', () => {
-        startLoading();
-        if (touchTimeout) clearTimeout(touchTimeout);
-        touchTimeout = setTimeout(stopLoading, 2000);
-    });
+    observer.observe(bioSection);
 }
 
 /* ==========================================================================
@@ -1105,6 +1457,57 @@ function initCareParticlesAnimation(canvasId) {
     animate();
 }
 
+/* ==========================================================================
+   ANIMAÇÕES DE ENTRADA SUAVE NAS SEÇÕES (DIFERENCIAIS, FAQ & AGENDAMENTO)
+   Todas com repetição dinâmica ao subir e descer a página
+   ========================================================================== */
+function initScrollTriggerAnimations() {
+    const animatedSections = [
+        { id: 'diferenciais', threshold: 0.10 },
+        { id: 'duvidas', threshold: 0.10 },
+        { id: 'agendamento', threshold: 0.10 }
+    ];
 
+    animatedSections.forEach(({ id, threshold }) => {
+        const section = document.getElementById(id);
+        if (!section) return;
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    section.classList.remove('is-visible');
+                    void section.offsetWidth; // Força reflow para reiniciar transições
+                    section.classList.add('is-visible');
+                } else {
+                    section.classList.remove('is-visible');
+                }
+            });
+        }, {
+            threshold: threshold,
+            rootMargin: '0px 0px -30px 0px'
+        });
 
+        observer.observe(section);
+    });
+
+    // Suporte ao toque e clique no mobile para o efeito de carregamento de borda nos cards de diferenciais
+    const pillarCards = document.querySelectorAll('.pillar-card');
+    pillarCards.forEach(card => {
+        let touchTimeout = null;
+
+        card.addEventListener('pointerdown', () => {
+            pillarCards.forEach(c => c.classList.remove('is-charging'));
+            card.classList.add('is-charging');
+
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                card.classList.remove('is-charging');
+            }, 2600);
+        });
+
+        card.addEventListener('pointerleave', () => {
+            clearTimeout(touchTimeout);
+            card.classList.remove('is-charging');
+        });
+    });
+}
