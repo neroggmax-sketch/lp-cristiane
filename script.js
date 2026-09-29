@@ -132,6 +132,18 @@ function initMobileMenu() {
             }
         });
     });
+
+    // Fechar ao clicar fora do menu no celular
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+            navMenu.classList.remove('active');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
 }
 
 /* ==========================================================================
@@ -551,13 +563,19 @@ function initBioAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 playBio();
+                // No celular mantém visível sem reiniciar repetidamente ao rolar
+                if (window.innerWidth <= 768) {
+                    observer.unobserve(bioSection);
+                }
             } else {
-                resetBio();
+                if (window.innerWidth > 768) {
+                    resetBio();
+                }
             }
         });
     }, { 
-        threshold: 0.12,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0.10,
+        rootMargin: '0px 0px -20px 0px'
     });
 
     observer.observe(bioSection);
@@ -1475,16 +1493,20 @@ function initScrollTriggerAnimations() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    section.classList.remove('is-visible');
-                    void section.offsetWidth; // Força reflow para reiniciar transições
                     section.classList.add('is-visible');
+                    // No mobile, mantém visível para evitar piscadas ao rolar a página
+                    if (window.innerWidth <= 768) {
+                        observer.unobserve(section);
+                    }
                 } else {
-                    section.classList.remove('is-visible');
+                    if (window.innerWidth > 768) {
+                        section.classList.remove('is-visible');
+                    }
                 }
             });
         }, {
             threshold: threshold,
-            rootMargin: '0px 0px -30px 0px'
+            rootMargin: '0px 0px -20px 0px'
         });
 
         observer.observe(section);
