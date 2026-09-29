@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
+  color-scheme: light;
+  
   /* Paleta Verde Nobre & Vitalidade (Reviva) */
   --green-darkest: #071e11;
   --green-primary-dark: #0e3720;
@@ -180,14 +182,15 @@ button, input, select, textarea {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(238, 244, 238, 0.96);
+  background: #ffffff;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 14px rgba(11, 41, 23, 0.05);
   transition: var(--transition);
 }
 
 .main-header.scrolled {
-  background: rgba(232, 241, 232, 0.98);
+  background: rgba(255, 255, 255, 0.98);
   box-shadow: var(--shadow-sm);
   padding: 4px 0;
 }
@@ -196,24 +199,34 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 12px 0;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .brand-logo img {
   height: 52px;
   width: auto;
+  max-width: 175px;
   object-fit: contain;
   transition: var(--transition);
 }
 
 .brand-logo:hover img {
   transform: scale(1.03);
+}
+
+.header-zap-btn .header-zap-short {
+  display: none;
+}
+
+.header-zap-btn .header-zap-full {
+  display: inline;
 }
 
 .nav-menu {
@@ -2957,15 +2970,18 @@ button, input, select, textarea {
   margin-bottom: 50px;
 }
 
-.footer-brand img {
-  height: 56px;
+.footer-brand img,
+.footer-brand .footer-logo-img {
+  height: 62px;
   width: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 8px 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  max-width: 220px;
+  margin-bottom: 18px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   display: inline-block;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
 }
 
 .footer-brand p {
@@ -3229,24 +3245,69 @@ button, input, select, textarea {
    ========================================================================== */
 @media (max-width: 768px) {
   :root {
-    --unit-preview-width: 48px;
-    --unit-slide-gap: 12px;
+    --unit-preview-width: 0px !important;
+    --unit-slide-gap: 0px !important;
   }
 
   .top-bar {
     display: none;
   }
 
+  /* Header no Mobile */
+  .main-header {
+    background: #ffffff !important;
+  }
+
+  .header-inner {
+    padding: 8px 0;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    flex-shrink: 0;
+  }
+
+  .brand-logo img {
+    height: 44px;
+    width: auto;
+    max-width: 155px;
+    object-fit: contain;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header-zap-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  }
+
+  .header-zap-btn .header-zap-full {
+    display: none;
+  }
+
+  .header-zap-btn .header-zap-short {
+    display: inline;
+  }
+
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 1.15rem;
   }
 
   .nav-menu {
     position: fixed;
-    top: 75px;
+    top: 68px;
     left: -100%;
     width: 100%;
-    background: rgba(240, 246, 240, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -3314,7 +3375,35 @@ button, input, select, textarea {
     font-size: 1.22rem;
   }
 
-  /* Carrossel de Condomínios */
+  /* Carrossel de Condomínios (Mobile Totalmente Fluido) */
+  .units-carousel-wrapper {
+    padding-bottom: 64px;
+    position: relative;
+  }
+
+  .units-slider-viewport {
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .unit-slide {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    border-radius: 20px;
+  }
+
+  .unit-slide-dark-overlay {
+    display: none !important;
+  }
+
+  .unit-card-grid {
+    padding: 24px 16px !important;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
   .netflix-carousel-header {
     flex-direction: column;
     align-items: stretch;
@@ -3339,25 +3428,37 @@ button, input, select, textarea {
   }
 
   .netflix-slider-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 1.15rem;
-  }
-
-  .netflix-slider-btn.netflix-next-btn {
-    right: calc(var(--unit-preview-width) - 18px);
+    top: auto;
+    bottom: 6px;
+    transform: none;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    z-index: 25;
   }
 
   .netflix-slider-btn.netflix-prev-btn {
-    left: 4px;
+    left: calc(50% - 60px);
+  }
+
+  .netflix-slider-btn.netflix-next-btn {
+    right: auto;
+    left: calc(50% + 12px);
+  }
+
+  .netflix-btn-pulse {
+    display: none !important;
   }
 
   .unit-gallery-main {
-    height: 250px;
+    height: 240px;
+    border-radius: 16px;
   }
 
   .unit-gallery-thumbs {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px;
   }
 
   /* Seção História & Rolo de Fotos */
@@ -3507,6 +3608,15 @@ button, input, select, textarea {
     padding: 0 16px;
   }
 
+  .header-inner {
+    padding: 6px 0;
+  }
+
+  .brand-logo img {
+    height: 40px;
+    max-width: 135px;
+  }
+
   .hero-card-title {
     font-size: 1.85rem;
     line-height: 1.25;
@@ -3529,8 +3639,14 @@ button, input, select, textarea {
     height: 215px;
   }
 
+  .unit-gallery-thumbs {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px;
+  }
+
   .gallery-thumb {
-    height: 65px;
+    height: 56px;
+    border-radius: 8px;
   }
 
   .film-viewport {
