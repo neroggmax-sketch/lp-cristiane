@@ -3396,12 +3396,22 @@ button, input, select, textarea {
     border-radius: 20px;
     padding: 0;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .units-slider-track {
+    gap: 0px !important;
+    column-gap: 0px !important;
   }
 
   .unit-slide {
     flex: 0 0 100% !important;
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 !important;
     border-radius: 20px;
   }
 

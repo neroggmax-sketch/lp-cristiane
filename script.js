@@ -173,10 +173,15 @@ function initUnitsCarousel() {
     }
 
     function getSlideStep() {
+        if (window.innerWidth <= 768) {
+            const viewport = track.parentElement;
+            return viewport ? viewport.clientWidth : track.clientWidth;
+        }
         const firstSlide = track.querySelector('.unit-slide');
         if (!firstSlide) return 0;
         const style = window.getComputedStyle(track);
-        const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+        const parsedGap = parseFloat(style.columnGap || style.gap);
+        const gap = isNaN(parsedGap) ? 24 : parsedGap;
         return firstSlide.offsetWidth + gap;
     }
 
@@ -245,9 +250,14 @@ function initUnitsCarousel() {
                 switchPhotoInCurrentUnit(currentPhotoIndex);
                 startAutoPlay();
             } else {
-                // Chegou na última imagem (4ª imagem): troca para o próximo bloco de condomínio!
                 currentPhotoIndex = 0;
-                goToSlide(currentUnitIndex + 1);
+                // No mobile, apenas cicla as fotos da unidade atual sem trocar de condomínio sozinho
+                if (window.innerWidth <= 768) {
+                    switchPhotoInCurrentUnit(0);
+                    startAutoPlay();
+                } else {
+                    goToSlide(currentUnitIndex + 1);
+                }
             }
         }, PHOTO_DISPLAY_TIME);
     }
@@ -397,29 +407,6 @@ function initUnitsCarousel() {
             startAutoPlay();
         }
     });
-
-    // Suporte a gestos touch/swipe no celular
-    let startX = 0;
-    let isSwiping = false;
-
-    track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isSwiping = true;
-        stopAutoPlay();
-    }, { passive: true });
-
-    track.addEventListener('touchend', (e) => {
-        if (!isSwiping) return;
-        isSwiping = false;
-        const diffX = e.changedTouches[0].clientX - startX;
-        if (diffX < -45) {
-            goToSlide(currentUnitIndex + 1); // Arrastou para a esquerda -> Próximo
-        } else if (diffX > 45) {
-            goToSlide(currentUnitIndex - 1); // Arrastou para a direita -> Anterior
-        } else {
-            startAutoPlay();
-        }
-    }, { passive: true });
 
     // Recalcular posicionamento no redimensionamento da janela
     window.addEventListener('resize', () => {
