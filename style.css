@@ -1246,6 +1246,9 @@ button, input, select, textarea {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 .unit-info-col {
@@ -1254,6 +1257,8 @@ button, input, select, textarea {
   justify-content: center;
   gap: 22px;
   height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .unit-name {
@@ -1284,13 +1289,17 @@ button, input, select, textarea {
   color: var(--text-secondary);
   line-height: 1.8;
   margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .unit-amenities-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .unit-amenity-item {
@@ -1306,6 +1315,8 @@ button, input, select, textarea {
   padding: 14px 16px;
   box-shadow: 0 2px 8px rgba(11, 41, 23, 0.03);
   transition: var(--transition);
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .unit-amenity-item:hover {
@@ -1355,6 +1366,8 @@ button, input, select, textarea {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Galeria de Fotos da Unidade */
@@ -1362,6 +1375,9 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .unit-gallery-main {
@@ -1371,6 +1387,8 @@ button, input, select, textarea {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .unit-gallery-main img {
@@ -1405,8 +1423,10 @@ button, input, select, textarea {
 
 .unit-gallery-thumbs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery-thumb {
@@ -1418,6 +1438,8 @@ button, input, select, textarea {
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
   opacity: 0.72;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .gallery-thumb img {
@@ -3420,9 +3442,10 @@ button, input, select, textarea {
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     margin: 0 !important;
     border-radius: 20px;
+    overflow: hidden;
   }
 
   .unit-slide-dark-overlay {
@@ -3430,9 +3453,52 @@ button, input, select, textarea {
   }
 
   .unit-card-grid {
-    padding: 24px 16px !important;
-    gap: 20px;
-    border-radius: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 22px 16px !important;
+    gap: 20px !important;
+    border-radius: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 35px -10px rgba(13, 56, 32, 0.12) !important;
+  }
+
+  .unit-info-col,
+  .unit-gallery-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .unit-amenities-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .unit-amenity-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 12px 14px !important;
+    font-size: 0.92rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    line-height: 1.35 !important;
+  }
+
+  .unit-amenity-item i {
+    font-size: 1.15rem !important;
+    flex-shrink: 0 !important;
   }
 
   .netflix-carousel-header {
@@ -3482,14 +3548,41 @@ button, input, select, textarea {
   }
 
   .unit-gallery-main {
-    height: 240px;
-    border-radius: 16px;
+    height: 230px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .unit-gallery-thumbs {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .gallery-thumb {
+    height: 64px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .unit-address-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 14px !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .unit-address-text {
+    font-size: 0.94rem !important;
+    line-height: 1.45 !important;
   }
 
   /* Seção História & Rolo de Fotos */
@@ -3674,18 +3767,38 @@ button, input, select, textarea {
     font-size: 1.35rem;
   }
 
+  .unit-card-grid {
+    padding: 18px 12px !important;
+    gap: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .unit-amenity-item {
+    padding: 11px 12px !important;
+    font-size: 0.88rem !important;
+    gap: 10px !important;
+  }
+
   .unit-gallery-main {
-    height: 215px;
+    height: 205px !important;
   }
 
   .unit-gallery-thumbs {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 6px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 6px !important;
   }
 
   .gallery-thumb {
-    height: 56px;
-    border-radius: 8px;
+    height: 54px !important;
+    border-radius: 8px !important;
+  }
+
+  .unit-address-box {
+    padding: 10px 12px !important;
+  }
+
+  .unit-address-text {
+    font-size: 0.88rem !important;
   }
 
   .film-viewport {

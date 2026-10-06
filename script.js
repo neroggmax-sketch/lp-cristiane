@@ -175,7 +175,7 @@ function initUnitsCarousel() {
     function getSlideStep() {
         if (window.innerWidth <= 768) {
             const viewport = track.parentElement;
-            return viewport ? viewport.clientWidth : track.clientWidth;
+            return viewport ? (viewport.getBoundingClientRect().width || viewport.clientWidth) : track.clientWidth;
         }
         const firstSlide = track.querySelector('.unit-slide');
         if (!firstSlide) return 0;
@@ -372,6 +372,34 @@ function initUnitsCarousel() {
             }
         }
     });
+
+    // Suporte a gestos touch (deslizar com o dedo) no celular
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+        stopAutoPlay();
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+        // Se o movimento horizontal for predominante e maior que 40px
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (diffX > 0) {
+                goToSlide(currentUnitIndex + 1);
+            } else {
+                goToSlide(currentUnitIndex - 1);
+            }
+        }
+        startAutoPlay();
+    }, { passive: true });
 
     // Pausar autoplay quando o mouse estiver sobre o carrossel e retomar ao sair
     if (wrapper) {
