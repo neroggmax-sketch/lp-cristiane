@@ -436,11 +436,17 @@ function initUnitsCarousel() {
         }
     });
 
-    // Recalcular posicionamento no redimensionamento da janela
-    window.addEventListener('resize', () => {
+    // Recalcular posicionamento no redimensionamento da janela e rotação do celular
+    function recalibrateCarousel() {
         const step = getSlideStep();
         track.style.transition = 'none';
         track.style.transform = `translateX(-${currentUnitIndex * step}px)`;
+    }
+
+    window.addEventListener('resize', recalibrateCarousel);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(recalibrateCarousel, 120);
+        setTimeout(recalibrateCarousel, 300);
     });
 
     // Iniciar autoplay somente quando a seção estiver visível na tela

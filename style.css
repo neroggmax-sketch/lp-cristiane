@@ -3455,9 +3455,9 @@ button, input, select, textarea {
   .unit-card-grid {
     display: flex !important;
     flex-direction: column !important;
-    padding: 22px 16px !important;
-    gap: 20px !important;
-    border-radius: 20px !important;
+    padding: clamp(16px, 3.8vw, 24px) clamp(12px, 3.2vw, 18px) !important;
+    gap: clamp(16px, 3.2vw, 22px) !important;
+    border-radius: clamp(16px, 3vw, 22px) !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -3476,7 +3476,7 @@ button, input, select, textarea {
   .unit-amenities-list {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: clamp(8px, 2vw, 11px) !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -3485,9 +3485,9 @@ button, input, select, textarea {
   .unit-amenity-item {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
-    padding: 12px 14px !important;
-    font-size: 0.92rem !important;
+    gap: clamp(10px, 2.5vw, 13px) !important;
+    padding: clamp(10px, 2.6vw, 13px) clamp(12px, 3.2vw, 16px) !important;
+    font-size: clamp(0.85rem, 2.8vw, 0.94rem) !important;
     border-radius: 12px !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -3497,7 +3497,7 @@ button, input, select, textarea {
   }
 
   .unit-amenity-item i {
-    font-size: 1.15rem !important;
+    font-size: clamp(1rem, 3vw, 1.15rem) !important;
     flex-shrink: 0 !important;
   }
 
@@ -3548,7 +3548,10 @@ button, input, select, textarea {
   }
 
   .unit-gallery-main {
-    height: 230px !important;
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+    min-height: 180px !important;
+    max-height: 320px !important;
     width: 100% !important;
     max-width: 100% !important;
     border-radius: 16px !important;
@@ -3559,14 +3562,17 @@ button, input, select, textarea {
   .unit-gallery-thumbs {
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 8px !important;
+    gap: clamp(5px, 1.6vw, 8px) !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .gallery-thumb {
-    height: 64px !important;
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    min-height: 46px !important;
+    max-height: 72px !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
   }
@@ -3575,14 +3581,22 @@ button, input, select, textarea {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    padding: 12px 14px !important;
+    padding: clamp(10px, 2.5vw, 13px) clamp(12px, 3.2vw, 16px) !important;
     overflow-wrap: break-word !important;
     word-break: break-word !important;
   }
 
   .unit-address-text {
-    font-size: 0.94rem !important;
+    font-size: clamp(0.86rem, 2.7vw, 0.95rem) !important;
     line-height: 1.45 !important;
+  }
+
+  /* Em tablets / telas médias (550px a 768px), os diferenciais usam 2 colunas fluidas */
+  @media (min-width: 550px) and (max-width: 768px) {
+    .unit-amenities-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 12px !important;
+    }
   }
 
   /* Seção História & Rolo de Fotos */
