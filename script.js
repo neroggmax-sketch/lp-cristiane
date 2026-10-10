@@ -147,7 +147,7 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   3. CARROSSEL DE CONDOMÍNIOS (ESTILO NETFLIX COM PRÉVIA ESCURA)
+   3. CARROSSEL DE UNIDADES (ESTILO NETFLIX COM PRÉVIA ESCURA)
    ========================================================================== */
 let currentUnitIndex = 0;
 const totalUnits = 3;
@@ -245,13 +245,13 @@ function initUnitsCarousel() {
             const totalPhotos = thumbs.length || 4;
 
             if (currentPhotoIndex < totalPhotos - 1) {
-                // Passa para a próxima imagem dentro do condomínio atual (1 -> 2 -> 3 -> 4)
+                // Passa para a próxima imagem dentro da unidade atual (1 -> 2 -> 3 -> 4)
                 currentPhotoIndex++;
                 switchPhotoInCurrentUnit(currentPhotoIndex);
                 startAutoPlay();
             } else {
                 currentPhotoIndex = 0;
-                // No mobile, apenas cicla as fotos da unidade atual sem trocar de condomínio sozinho
+                // No mobile, apenas cicla as fotos da unidade atual sem trocar de unidade sozinho
                 if (window.innerWidth <= 768) {
                     switchPhotoInCurrentUnit(0);
                     startAutoPlay();

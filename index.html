@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=27">
+    <link rel="stylesheet" href="style.css?v=29">
 </head>
 
 <body>
@@ -38,7 +38,9 @@
                 <a href="#unidades" class="nav-link">Nossas Unidades</a>
                 <a href="#historia" class="nav-link">Nossa História</a>
                 <a href="#biografia" class="nav-link">A Fundadora</a>
-                <a href="#diferenciais" class="nav-link">Cuidado Humanizado</a>
+                <a href="#diferenciais" class="nav-link">Diferenciais</a>
+                <a href="#galeria" class="nav-link">Momentos Reais</a>
+                <a href="#midia" class="nav-link">Na Mídia</a>
                 <a href="#duvidas" class="nav-link">Dúvidas</a>
             </nav>
 
@@ -137,14 +139,14 @@
 
             <!-- Carrossel Wrapper Estilo Netflix -->
             <div class="units-carousel-wrapper" id="unitsCarouselWrapper" tabindex="0"
-                aria-label="Carrossel de Condomínios">
+                aria-label="Carrossel de Unidades">
                 <!-- Botão de Navegação Esquerda (Netflix) -->
                 <button type="button" class="netflix-slider-btn netflix-prev-btn" id="unitsPrevBtn"
-                    aria-label="Condomínio anterior" title="Ver condomínio anterior">
+                    aria-label="Unidade anterior" title="Ver unidade anterior">
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <!-- Viewport & Trilho com os 3 Condomínios -->
+                <!-- Viewport & Trilho com as 3 Unidades -->
                 <div class="units-slider-viewport">
                     <div class="units-slider-track" id="unitsSliderTrack">
 
@@ -152,23 +154,24 @@
                         <div class="unit-slide" id="pane-unidade1" data-index="0">
                             <div class="unit-card-grid">
                                 <div class="unit-info-col">
-                                    <h3 class="unit-name">Unidade 1</h3>
+                                    <div class="unit-header-badges">
+                                        <h3 class="unit-name">Unidade 1</h3>
+                                        <span class="unit-badge-profile">
+                                            <i class="fas fa-smile"></i> Grau 1 e 2 • Conscientes e Orientados
+                                        </span>
+                                    </div>
 
                                     <p class="unit-desc">
-                                        Ambiente seguro, quartos espaçosos e aconchegantes com camas adaptadas,
-                                        banheiros com acessibilidade total, ampla cozinha com padrão de higiene rigoroso
-                                        e solarium para banhos de sol diários e momentos de serenidade.
+                                        Dedicada a residentes conscientes e orientados (Grau 1 e 2). Ambiente acolhedor,
+                                        quartos espaçosos e arejados com camas adaptadas, banheiros com acessibilidade total,
+                                        cozinha com rigoroso padrão nutricional e solarium privativo para banhos de sol diários.
                                     </p>
 
                                     <div class="unit-amenities-list">
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Quartos
-                                            suítes e compartilhados</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Camas com
-                                            proteção antiqueda</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Cozinha
-                                            nutricional profissional</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Solarium e
-                                            ventilação natural</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Residentes conscientes e orientados (Grau 1 e 2)</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Quartos suítes e compartilhados com proteção</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Solarium para banho de sol e relaxamento</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Cozinha nutricional profissional</div>
                                     </div>
                                 </div>
 
@@ -206,10 +209,8 @@
                                     </div>
 
                                     <div class="unit-address-box">
-                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
-                                            Unidade</div>
-                                        <div class="unit-address-text">Rua Fernão de Magalhães, 689, Taquaral,
-                                            Campinas/SP</div>
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da Unidade</div>
+                                        <div class="unit-address-text">Rua Fernão de Magalhães, 689, Taquaral, Campinas/SP</div>
                                     </div>
                                 </div>
                             </div>
@@ -220,23 +221,25 @@
                         <div class="unit-slide" id="pane-unidade2" data-index="1">
                             <div class="unit-card-grid">
                                 <div class="unit-info-col">
-                                    <h3 class="unit-name">Unidade 2</h3>
+                                    <div class="unit-header-badges">
+                                        <h3 class="unit-name">Unidade 2</h3>
+                                        <span class="unit-badge-profile unit-badge-high-care">
+                                            <i class="fas fa-hand-holding-medical"></i> Alta Dependência • Acamados, Sonda e Não Verbais
+                                        </span>
+                                    </div>
 
                                     <p class="unit-desc">
-                                        Uma encantadora casa com fachada em tijolos aparentes, amplo jardim gramado com
-                                        árvores nativas, banco de descanso e linda fonte d'água. Toda a entrada conta
-                                        com rampa suave de acessibilidade e corrimão duplo contínuo.
+                                        Estrutura altamente especializada e adaptada para pacientes de alta complexidade:
+                                        exclusiva para idosos acamados, com uso de sonda e não verbais. Conta com fachada charmosa,
+                                        amplo jardim frontal com fonte serena, rampa de acessibilidade com corrimão duplo contínuo e
+                                        assistência intensiva ininterrupta com cuidadores dedicados e acompanhamento de enfermagem.
                                     </p>
 
                                     <div class="unit-amenities-list">
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim
-                                            frontal com fonte e pássaros</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Rampa com
-                                            inclinação suave e corrimão</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Salas de
-                                            convivência iluminadas</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Clima de
-                                            chácara e sossego</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Assistência intensiva para acamados</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Suporte total a sondas e não verbais</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Rampa com inclinação suave e corrimão duplo</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim frontal com fonte d'água e paz</div>
                                     </div>
                                 </div>
 
@@ -274,10 +277,8 @@
                                     </div>
 
                                     <div class="unit-address-box">
-                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
-                                            Unidade</div>
-                                        <div class="unit-address-text">Rua Fernão de Magalhães, 809, Taquaral,
-                                            Campinas/SP</div>
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da Unidade</div>
+                                        <div class="unit-address-text">Rua Fernão de Magalhães, 740, Taquaral, Campinas/SP</div>
                                     </div>
                                 </div>
                             </div>
@@ -288,23 +289,25 @@
                         <div class="unit-slide" id="pane-unidade3" data-index="2">
                             <div class="unit-card-grid">
                                 <div class="unit-info-col">
-                                    <h3 class="unit-name">Unidade 3</h3>
+                                    <div class="unit-header-badges">
+                                        <h3 class="unit-name">Unidade 3</h3>
+                                        <span class="unit-badge-profile">
+                                            <i class="fas fa-water"></i> Grau 1 e 2 • Em Frente à Lagoa do Taquaral
+                                        </span>
+                                    </div>
 
                                     <p class="unit-desc">
-                                        Destaque para a espetacular varanda com portas de vidro amplas integradas ao
-                                        jardim florido com palmeiras e plantas ornamentais. Quartos luminosos, pisos em
-                                        padrão amadeirado acolhedor e mobiliário planejado para conforto total.
+                                        Localização privilegiada exatamente em frente à Lagoa do Taquaral, voltada para residentes
+                                        conscientes e orientados (Grau 1 e 2). Destaque para a espetacular varanda com portas de vidro
+                                        amplas integradas ao jardim florido e árvores nativas, quartos luminosos, ambiente arejado e
+                                        conforto total para uma rotina ativa e acolhedora.
                                     </p>
 
                                     <div class="unit-amenities-list">
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Varanda com
-                                            área de estar coberta</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim
-                                            paisagístico com flores e sol</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Piso
-                                            amadeirado aconchegante</div>
-                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Portas amplas
-                                            e circulação livre</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Localização nobre em frente à Lagoa do Taquaral</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Residentes conscientes e orientados (Grau 1 e 2)</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Varanda com área de estar e convivência coberta</div>
+                                        <div class="unit-amenity-item"><i class="fas fa-check-circle"></i> Jardim paisagístico com flores e luz natural</div>
                                     </div>
                                 </div>
 
@@ -342,10 +345,8 @@
                                     </div>
 
                                     <div class="unit-address-box">
-                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da
-                                            Unidade</div>
-                                        <div class="unit-address-text">Rua Fernão de Magalhães, 740, Taquaral,
-                                            Campinas/SP</div>
+                                        <div class="unit-address-label"><i class="fas fa-location-dot"></i> Endereço da Unidade</div>
+                                        <div class="unit-address-text">Av. Dr. Heitor Penteado, 1725, Taquaral, Campinas/SP (Em frente à Lagoa)</div>
                                     </div>
                                 </div>
                             </div>
@@ -357,12 +358,42 @@
 
                 <!-- Botão de Navegação Direita (Netflix - Passar para o lado) -->
                 <button type="button" class="netflix-slider-btn netflix-next-btn" id="unitsNextBtn"
-                    aria-label="Próximo condomínio" title="Passar para o próximo condomínio">
+                    aria-label="Próxima unidade" title="Passar para a próxima unidade">
                     <i class="fas fa-chevron-right"></i>
                     <span class="netflix-btn-pulse"></span>
                 </button>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       BARRA DE AUTORIDADE: SELO MORADA LEGAL (PREFEITURA DE CAMPINAS)
+       ========================================================================== -->
+    <section class="seal-morada-legal-section">
+        <div class="container">
+            <div class="seal-morada-card">
+                <div class="seal-badge-emblem">
+                    <div class="seal-icon-circle">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <span class="seal-pill-text">100% Legalizada</span>
+                </div>
+                <div class="seal-info-text">
+                    <span class="seal-subheading"><i class="fas fa-certificate"></i> Certificação Oficial • Prefeitura Municipal de Campinas</span>
+                    <h3 class="seal-headline">Título "Morada Legal": Segurança e Conformidade Total</h3>
+                    <p class="seal-description">
+                        A Reviva Senior's Residence é detentora do selo <strong>Morada Legal</strong>, concedido pela <strong>Prefeitura de Campinas</strong> às instituições que operam com rigorosa aprovação da <strong>Vigilância Sanitária</strong>, Auto de Vistoria do Corpo de Bombeiros (<strong>AVCB</strong>) e registro ativo no Conselho Municipal do Idoso (<strong>CMI</strong>). Certeza de cuidado responsável e seguro para sua família.
+                    </p>
+                </div>
+                <div class="seal-stamp-visual">
+                    <div class="stamp-circle">
+                        <i class="fas fa-award"></i>
+                        <span>MORADA LEGAL</span>
+                        <small>CAMPINAS / SP</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -492,7 +523,7 @@
         <div class="container bio-container">
             <div class="bio-3col-grid">
 
-                <!-- COLUNA ESQUERDA: PROPÓSITO & LIDERANÇA -->
+                <!-- COLUNA ESQUERDA: PROPÓSITO & FORMAÇÃO DE DESTAQUE -->
                 <div class="bio-col bio-col-left">
                     <div class="bio-reveal-item" data-delay="1">
                         <h2 class="bio-title"><span class="highlight-mint">Cristiane</span> Alberti</h2>
@@ -500,19 +531,20 @@
 
                     <div class="bio-reveal-item" data-delay="2">
                         <p class="bio-text">
-                            Idealizadora da Reviva Senior’s, Cristiane Alberti é movida por um propósito inabalável:
-                            oferecer um envelhecimento com dignidade, conforto e segurança.
+                            Idealizadora e gestora da Reviva Senior’s, Cristiane Alberti é movida por um propósito inabalável:
+                            oferecer à pessoa idosa um envelhecimento com dignidade, conforto, respeito e afeto diário.
                         </p>
                     </div>
 
                     <div class="bio-reveal-item" data-delay="3">
                         <p class="bio-text">
-                            Sua sensibilidade e visão humanizada transformaram a assistência em missão de vida,
-                            inspirando toda a equipe a cuidar de cada residente como alguém da própria família.
+                            <strong>Enfermeira graduada desde 2006 pela PUC-Campinas</strong>, é <strong>especialista em Oncologia</strong> e possui vasta experiência clínica em atendimentos de <strong>urgência, emergência e geriatria</strong>. Essa sólida bagagem hospitalar e assistencial orienta todos os protocolos de cuidado da Reviva.
                         </p>
                     </div>
 
-                    <div class="bio-cta-wrapper bio-reveal-item" data-delay="4">
+
+
+                    <div class="bio-cta-wrapper bio-reveal-item" data-delay="5">
                         <a href="https://www.instagram.com/revivaseniors?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
                             target="_blank" class="btn btn-instagram bio-cta-btn" rel="noopener noreferrer">
                             <i class="fab fa-instagram"></i> Conhecer no Instagram
@@ -530,7 +562,7 @@
                             <div class="bio-badge-dot"></div>
                             <div class="bio-badge-texts">
                                 <strong>Cristiane Alberti</strong>
-                                <span>Idealizadora da Reviva Senior’s</span>
+                                <span>Idealizadora da Reviva Senior’s • Enfermeira PUC</span>
                             </div>
                         </div>
                     </div>
@@ -547,16 +579,15 @@
 
                     <div class="bio-reveal-item" data-delay="3">
                         <p class="bio-text">
-                            Cris sempre acreditou que o cuidado vai além do protocolo clínico: ele nasce do afeto
-                            diário. Sua trajetória é marcada por empatia, escuta ativa e o desejo genuíno de fazer a
-                            diferença.
+                            Cris sempre acreditou que o cuidado vai além do protocolo clínico: ele nasce da convivência atenta
+                            e do afeto diário. Sua liderança inspira toda a equipe a acolher cada residente como alguém da própria família.
                         </p>
                     </div>
 
                     <div class="bio-reveal-item" data-delay="4">
                         <p class="bio-text">
-                            É com esse olhar que ela construiu a Reviva: um condomínio onde o aconchego de um lar
-                            encontra o mais alto padrão de saúde e acessibilidade em Campinas.
+                            É com essa dedicação que ela construiu a Reviva: um residencial sênior de excelência onde o aconchego de um lar
+                            encontra o mais alto padrão de saúde, segurança e acessibilidade em Campinas.
                         </p>
                     </div>
 
@@ -578,66 +609,126 @@
     <section id="diferenciais" class="section section-dark-luxury">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">O Que Torna Nosso Cuidado Incomparável</h2>
+
+                <h2 class="section-title">Nossos Diferenciais Exclusivos</h2>
                 <p class="section-subtitle">
-                    Oferecemos tranquilidade absoluta para as famílias e uma rotina viva, acolhedora e saudável para os
-                    nossos queridos residentes.
+                    Muito além de uma hospedagem, um ecossistema completo de saúde, afeto e estímulo diário para quem você mais ama.
                 </p>
+            </div>
+
+            <!-- GRADE COM OS 8 DIFERENCIAIS EXCLUSIVOS SOLICITADOS -->
+            <div class="differentials-exclusive-grid">
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Médica Geriatra</h3>
+                    <p class="diff-card-desc">
+                        Acompanhamento médico quinzenal dedicado a avaliar a estabilidade clínica, prevenção e ajuste terapêutico de cada residente.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Fisioterapia Individual</h3>
+                    <p class="diff-card-desc">
+                        Atendimento fisioterápico focado nas necessidades individuais para fortalecimento muscular, equilíbrio e reabilitação motora.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Fisioterapia Coletiva</h3>
+                    <p class="diff-card-desc">
+                        Atividades motoras em grupo com foco em prevenção de quedas, manutenção da mobilidade e interação social prazerosa.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Nutricionista</h3>
+                    <p class="diff-card-desc">
+                        Avaliação nutricional mensal contínua e cardápios saborosos planejados para atender todas as dietas (normal, pastosa, diabética ou hipossódica).
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Terapia Ocupacional</h3>
+                    <p class="diff-card-desc">
+                        Estímulo semanal às funções cognitivas, coordenação motora e autonomia, promovendo autoestima e sensação de realização.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Musicoterapia</h3>
+                    <p class="diff-card-desc">
+                        Sessões semanais com estímulo sonoro e musical, resgate de memórias afetivas, redução de ansiedade e momentos de alegria.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Bingo Semanal</h3>
+                    <p class="diff-card-desc">
+                        Tarde animada de bingo interativo toda semana, estimulando atenção rápida, convívio divertido e muitas risadas entre os amigos.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <h3 class="diff-card-title">Happy Hour Mensal</h3>
+                    <p class="diff-card-desc">
+                        Comemorações temáticas e celebração dos aniversariantes do mês com música, comidas especiais e integração afetiva das famílias.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- PILARES ESTRUTURAIS DO CUIDADO (CUIDADORES 24H E ENFERMAGEM) -->
+            <div class="pillars-secondary-header">
+                <h3 class="pillars-sub-title">Pilares da Nossa Assistência Diária</h3>
             </div>
 
             <div class="pillars-grid">
 
                 <div class="pillar-card">
-                    <div class="pillar-icon-box"><i class="fas fa-heart-pulse"></i></div>
-                    <h3 class="pillar-title">Enfermagem 24 Horas</h3>
+                    <div class="pillar-icon-box"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3 class="pillar-title">Cuidadores 24 Horas & Enfermagem</h3>
                     <p class="pillar-desc">
-                        Plantão ininterrupto com enfermeiros e cuidadores capacitados para ministração pontual de
-                        medicações, controle de sinais vitais e primeiros socorros.
+                        Cuidado ininterrupto 24h realizado por equipe capacitada de <strong>Cuidadores</strong>, com presença e supervisão contínua de <strong>Enfermeira</strong> para ministração pontual de medicamentos e controle clínico.
                     </p>
                 </div>
 
                 <div class="pillar-card">
                     <div class="pillar-icon-box"><i class="fas fa-utensils"></i></div>
-                    <h3 class="pillar-title">Nutrição & Gastronomia</h3>
+                    <h3 class="pillar-title">6 Refeições Diárias Balanceadas</h3>
                     <p class="pillar-desc">
-                        6 refeições balanceadas por dia, elaboradas por nutricionista e preparadas com afeto para
-                        atender dietas normais, hipossódicas, pastosas ou diabéticas.
-                    </p>
-                </div>
-
-                <div class="pillar-card">
-                    <div class="pillar-icon-box"><i class="fas fa-person-walking-with-cane"></i></div>
-                    <h3 class="pillar-title">Fisioterapia & Mobilidade</h3>
-                    <p class="pillar-desc">
-                        Exercícios preventivos e reabilitativos para manutenção da força muscular, equilíbrio, prevenção
-                        de quedas e ganho de independência motora.
-                    </p>
-                </div>
-
-                <div class="pillar-card">
-                    <div class="pillar-icon-box"><i class="fas fa-music"></i></div>
-                    <h3 class="pillar-title">Musicoterapia & Atividades</h3>
-                    <p class="pillar-desc">
-                        Estímulo neurológico e emocional constante através de música, jogos cognitivos, artesanato,
-                        celebração de aniversários e datas comemorativas.
+                        Cardápio balanceado com 6 refeições diárias (café, lanche, almoço, lanche da tarde, jantar e ceia), preparadas com tempero de casa e supervisão nutricional.
                     </p>
                 </div>
 
                 <div class="pillar-card">
                     <div class="pillar-icon-box"><i class="fas fa-wheelchair"></i></div>
-                    <h3 class="pillar-title">100% Adaptado</h3>
+                    <h3 class="pillar-title">Estrutura 100% Adaptada (NBR 9050)</h3>
                     <p class="pillar-desc">
-                        Barras de apoio, corredores amplos, portas largas, rampas sem degraus e banheiros totalmente
-                        adaptados aos padrões de acessibilidade NBR 9050.
+                        Rampas suaves com corrimão duplo contínuo, barras de segurança, corredores amplos, portas largas e banheiros com acessibilidade hospitalar completa.
                     </p>
                 </div>
 
                 <div class="pillar-card">
                     <div class="pillar-icon-box"><i class="fas fa-people-roof"></i></div>
-                    <h3 class="pillar-title">Visitas Abertas & Família</h3>
+                    <h3 class="pillar-title">Visitas Livres & Vínculo Familiar</h3>
                     <p class="pillar-desc">
-                        Acreditamos que o laço com a família é o melhor remédio. Incentivamos visitas acolhedoras com
-                        horários flexíveis e ampla comunicação com os parentes.
+                        Incentivamos e acolhemos a presença diária da família. Nossos jardins, salas e varandas são espaços abertos para momentos de amor e conversa.
+                    </p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fas fa-certificate"></i></div>
+                    <h3 class="pillar-title">Selo Morada Legal (Prefeitura)</h3>
+                    <p class="pillar-desc">
+                        Instituição 100% legalizada em Campinas, rigorosamente aprovada na Vigilância Sanitária, Corpo de Bombeiros (AVCB) e Conselho Municipal do Idoso (CMI).
+                    </p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fas fa-sun"></i></div>
+                    <h3 class="pillar-title">Áreas Verdes & Banhos de Sol</h3>
+                    <p class="pillar-desc">
+                        Jardins floridos, árvores nativas, solarium privativo e ar puro, garantindo vitamina D natural e tranquilidade em todas as unidades no Taquaral.
                     </p>
                 </div>
 
@@ -645,6 +736,149 @@
         </div>
     </section>
 
+    <!-- ==========================================================================
+       NOVA SEÇÃO: MOMENTOS REAIS NA REVIVA (GALERIA VIVA DE FOTOS REAIS)
+       ========================================================================== -->
+    <section id="galeria" class="section section-gallery-viva">
+        <div class="container">
+            <div class="section-header">
+
+                <h2 class="section-title">Momentos Reais na Reviva Senior's</h2>
+                <p class="section-subtitle">
+                    Veja um pouco da nossa rotina de carinho, celebrações e aconchego. Cada sorriso reflete a essência do nosso propósito.
+                </p>
+            </div>
+
+            <!-- Carrossel / Grid de Fotos Reais -->
+            <div class="moments-carousel-container">
+                <div class="moments-track" id="momentsTrack">
+
+                    <div class="moment-card" onclick="openLightbox('img/galeria-afeto.jpg', 'Cuidado diário que nasce do afeto genuíno')">
+                        <div class="moment-img-wrap">
+                            <img src="img/galeria-afeto.jpg" alt="Afeto e carinho com residentes na Reviva" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-heart"></i> Afeto Diário</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">Cuidado que vai além da técnica: afeto e empatia em cada gesto.</div>
+                    </div>
+
+                    <div class="moment-card" onclick="openLightbox('img/cris-acolhimento.jpg', 'Cristiane Alberti e residente no jardim acolhedor da Reviva')">
+                        <div class="moment-img-wrap">
+                            <img src="img/cris-acolhimento.jpg" alt="Cristiane Alberti com residente da Reviva" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-user-nurse"></i> Acolhimento</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">A idealizadora Cristiane Alberti ao lado de nossos amados residentes.</div>
+                    </div>
+
+                    <div class="moment-card" onclick="openLightbox('img/galeria-residente-1.jpg', 'Sorrisos e bem-estar no residencial')">
+                        <div class="moment-img-wrap">
+                            <img src="img/galeria-residente-1.jpg" alt="Residente sorridente na Reviva" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-smile"></i> Alegria & Paz</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">Dignidade e acolhimento para viver a maturidade com leveza.</div>
+                    </div>
+
+                    <div class="moment-card" onclick="openLightbox('img/galeria-residente-2.jpg', 'Momentos de paz ao ar livre no jardim do Taquaral')">
+                        <div class="moment-img-wrap">
+                            <img src="img/galeria-residente-2.jpg" alt="Residente aproveitando o jardim na Reviva" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-sun"></i> Serenidade</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">Banhos de sol, tranquilidade e conversa boa em nossos jardins arborizados.</div>
+                    </div>
+
+                    <div class="moment-card" onclick="openLightbox('img/galeria-carreta-alegria.jpg', 'Visita especial da Carreta da Alegria na Reviva Senior')">
+                        <div class="moment-img-wrap">
+                            <img src="img/galeria-carreta-alegria.jpg" alt="Carreta da Alegria em evento na Reviva" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-masks-theater"></i> Eventos Especiais</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">Eventos recreativos surpreendentes: diversão e encanto para todas as idades.</div>
+                    </div>
+
+                    <div class="moment-card" onclick="openLightbox('img/galeria-equipe.jpg', 'Equipe Reviva Senior reunida em momento especial')">
+                        <div class="moment-img-wrap">
+                            <img src="img/galeria-equipe.jpg" alt="Equipe multidisciplinar Reviva Senior's" loading="lazy">
+                            <div class="moment-overlay">
+                                <span class="moment-tag"><i class="fas fa-users"></i> Nossa Equipe</span>
+                                <i class="fas fa-expand moment-zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="moment-caption">Profissionais apaixonados por cuidar: cuidadores, enfermagem e especialistas.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Botão de Conexão com o Instagram -->
+            <div class="gallery-insta-cta">
+                <a href="https://www.instagram.com/revivaseniors" target="_blank" rel="noopener noreferrer" class="btn btn-instagram-big">
+                    <i class="fab fa-instagram"></i>
+                    <span>Ver mais fotos e vídeos no nosso Instagram <strong>@revivaseniors</strong></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       NOVA SEÇÃO: REVIVA NA MÍDIA & PODCAST
+       ========================================================================== -->
+    <section id="midia" class="section section-dark-luxury section-media-podcast">
+        <div class="container">
+            <div class="media-podcast-wrapper">
+                <div class="media-podcast-grid">
+
+                    <div class="media-podcast-info">
+                        <h2 class="media-title">Reviva no <em>Podcast Mundo Empresarial</em></h2>
+                        <p class="media-episode-tag">Episódio #77 • Convidada: Cristiane Alberti (CEO Reviva)</p>
+
+                        <p class="media-desc">
+                            Neste episódio imperdível, nossa idealizadora <strong>Cristiane Alberti</strong> compartilha os pilares humanos por trás da Reviva Senior’s, explicando como transformou a enfermagem em uma missão de vida voltada a acolher idosos com amor, segurança, fé e respeito.
+                        </p>
+
+                        <div class="media-highlights-list">
+                            <div class="media-highlight-item"><i class="fas fa-check-circle"></i> O olhar de enfermagem humanizado e a fundação da Reviva</div>
+                            <div class="media-highlight-item"><i class="fas fa-check-circle"></i> Como escolher uma residência segura para o familiar idoso</div>
+                            <div class="media-highlight-item"><i class="fas fa-check-circle"></i> Qualidade de vida, acolhimento do luto e convivência afetiva</div>
+                        </div>
+
+                        <div class="media-cta-box">
+                            <a href="https://www.youtube.com/watch?v=uFmUy8kt5Iw" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+                                <i class="fab fa-youtube"></i> Assistir no YouTube Completo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="media-podcast-video-col">
+                        <div class="video-responsive-frame">
+                            <a href="https://www.youtube.com/watch?v=uFmUy8kt5Iw" target="_blank" rel="noopener noreferrer" class="youtube-thumbnail-link">
+                                <img src="https://img.youtube.com/vi/uFmUy8kt5Iw/maxresdefault.jpg" alt="Podcast Mundo Empresarial" class="youtube-thumbnail-img">
+                                <div class="youtube-play-overlay">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="video-caption-label">
+                            <i class="fab fa-youtube"></i> Podcast Mundo Empresarial • Entrevista com Cristiane Alberti
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ==========================================================================
        SEÇÃO: DÚVIDAS FREQUENTES (FAQ)
@@ -654,7 +888,7 @@
             <div class="section-header">
                 <h2 class="section-title">Perguntas Frequentes</h2>
                 <p class="section-subtitle">
-                    Tire suas dúvidas sobre rotina, visitação e admissão na Reviva Senior's Residence.
+                    Tire suas dúvidas sobre rotina, visitação, cuidados e admissão na Reviva Senior's Residence.
                 </p>
             </div>
 
@@ -666,7 +900,7 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Incentivamos e valorizamos profundamente a presença da família! Nossas visitas são livres
+                        <p>Incentivamos e valorizamos profundamente a presença da família! Nossas visitas são acolhedoras e livres
                             dentro dos horários recomendados para preservar a rotina de descanso e refeições dos idosos.
                             Parentes e amigos são sempre muito bem-vindos nos jardins e salas de estar.</p>
                     </div>
@@ -674,40 +908,43 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Há acompanhamento de enfermagem e administração de medicamentos?</span>
+                        <span>Como funciona o acompanhamento de cuidadores e enfermagem?</span>
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Sim! Contamos com equipe de enfermagem presente 24 horas por dia em todas as unidades, sob
-                            coordenação direta da Enfermeira Especializada Cristiane Alberti. Toda a medicação é
-                            controlada rigorosamente segundo a prescrição do médico do residente.</p>
+                        <p>O cuidado ininterrupto 24 horas por dia é realizado por nossa equipe amorosa e capacitada de <strong>Cuidadores</strong>, que auxiliam em todas as atividades, alimentação, higiene e mobilidade. Temos também a presença e supervisão contínua de <strong>Enfermeira</strong>, sob coordenação direta da Enfermeira Especializada Cristiane Alberti, para administração pontual de medicamentos e controle clínico rigoroso.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Como é feita a alimentação dos residentes?</span>
+                        <span>Como é planejada a alimentação dos residentes?</span>
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Nossos cardápios são planejados por nutricionistas e preparados diariamente em cozinhas
-                            profissionais. São servidas 6 refeições por dia (café da manhã, lanche matinal, almoço,
-                            lanche da tarde, jantar e ceia), adaptadas às necessidades de cada idoso (baixo teor de sal,
-                            sem açúcar, pastosa, etc.).</p>
+                        <p>Nossos cardápios contam com acompanhamento mensal de nutricionista e são preparados diariamente com muito afeto em cozinhas profissionais. São servidas 6 refeições por dia (café da manhã, lanche matinal, almoço, lanche da tarde, jantar e ceia), adaptadas às necessidades de cada idoso (baixo teor de sódio, sem açúcar, consistência pastosa ou branda).</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Qual a diferença entre as 3 unidades?</span>
+                        <span>Qual a diferença entre as 3 unidades da Reviva?</span>
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Todas as nossas 3 unidades estão situadas no Taquaral em Campinas e compartilham da mesma
-                            diretriz técnica de enfermagem e carinho. A Unidade 1 conta com solarium e quartos amplos; a
-                            Unidade 2 possui lindo jardim com fonte e rampa acessível frontal; e a Unidade 3 se destaca
-                            pela varanda ampla e ambiente rodeado de verde. Em sua visita, você poderá conhecer e
-                            escolher a que melhor se adequa ao perfil do seu familiar.</p>
+                        <p>Todas as 3 unidades estão situadas no Taquaral em Campinas e compartilham da mesma diretriz de carinho e rigor técnico, porém foram planejadas para diferentes perfis de dependência:</p>
+                        <p>• <strong>Unidades 1 e 3:</strong> Atendem residentes em <strong>Grau 1 ou 2</strong> (idosos conscientes e orientados). A Unidade 1 possui solarium e dormitórios amplos; a Unidade 3 fica em frente à Lagoa do Taquaral, com espetacular varanda integrada ao jardim.</p>
+                        <p>• <strong>Unidade 2:</strong> Especializada no atendimento de <strong>alta complexidade</strong> (exclusiva para residentes acamados, em uso de sondas e não verbais), oferecendo rampa suave, acessibilidade total e cuidados intensivos contínuos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A Reviva é legalizada? O que significa o selo Morada Legal?</span>
+                        <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! A Reviva é 100% legalizada e detentora do selo <strong>Morada Legal</strong>, concedido pela <strong>Prefeitura Municipal de Campinas</strong>. Esse título comprova que nossas residências cumprem integralmente todas as exigências legais: aprovação plena da Vigilância Sanitária, Auto de Vistoria do Corpo de Bombeiros (AVCB) e inscrição ativa no Conselho Municipal do Idoso (CMI).</p>
                     </div>
                 </div>
 
@@ -717,9 +954,7 @@
                         <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Basta preencher o formulário abaixo ou clicar diretamente no botão de WhatsApp para falar
-                            conosco. Agendamos uma visita guiada no dia e horário mais convenientes para você conhecer
-                            as instalações, tomar um café e conversar com a nossa equipe.</p>
+                        <p>Basta clicar diretamente em um dos botões de WhatsApp abaixo para falar com nossa coordenação. Agendamos uma visita guiada no dia e horário mais convenientes para você conhecer as instalações, tomar um café e conversar com a nossa equipe.</p>
                     </div>
                 </div>
 
@@ -737,17 +972,18 @@
                 <div class="contact-info-col">
                     <h2>Venha Conhecer de Perto Nossas Casas e Nosso Cuidado</h2>
                     <p class="contact-lead-desc">
-                        A melhor maneira de sentir o aconchego, a infraestrutura e a segurança da Reviva é visitando nossas unidades pessoalmente.
+                        A melhor maneira de sentir o aconchego, a infraestrutura e a segurança da Reviva é visitando nossas unidades pessoalmente no Taquaral.
                     </p>
                     <p class="contact-sub-desc">
-                        Nossa coordenação técnica e equipe de enfermagem estão à disposição para receber você e sua família, esclarecer todas as dúvidas e apresentar cada ambiente com transparência e carinho.
+                        Nossa coordenação e equipe de enfermagem estão prontas para receber sua família, esclarecer dúvidas e apresentar cada ambiente com transparência e acolhimento.
                     </p>
+
                 </div>
 
                 <div class="contact-form-card contact-direct-box">
                     <h3 class="form-title">Fale Conosco Direto pelo WhatsApp</h3>
                     <p class="form-subtitle">
-                        Não precisa preencher nenhum formulário. Escolha a unidade que deseja conhecer ou fale em tempo real com nossa equipe para agendar sua visita:
+                        Escolha a unidade que deseja conhecer ou fale em tempo real com nossa equipe para agendar sua visita:
                     </p>
 
                     <div class="direct-units-section">
@@ -758,20 +994,21 @@
                                 <i class="fas fa-house-user"></i>
                                 <span>Unidade 1 (Rua Fernão de Magalhães, 689)</span>
                             </a>
-                            <a href="https://wa.me/5519996953554?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%202%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20809)"
+                            <a href="https://wa.me/5519996953554?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%202%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20740)"
                                 target="_blank" class="unit-zap-btn">
-                                <i class="fas fa-sun"></i>
-                                <span>Unidade 2 (Rua Fernão de Magalhães, 809)</span>
+                                <i class="fas fa-hand-holding-medical"></i>
+                                <span>Unidade 2 (Rua Fernão de Magalhães, 740)</span>
                             </a>
-                            <a href="https://wa.me/5519996953554?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%203%20(Rua%20Fern%C3%A3o%20de%20Magalh%C3%A3es%2C%20740)"
+                            <a href="https://wa.me/5519996953554?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20na%20Unidade%203%20(Av.%20Dr.%20Heitor%20Penteado%2C%201725)"
                                 target="_blank" class="unit-zap-btn">
-                                <i class="fas fa-seedling"></i>
-                                <span>Unidade 3 (Rua Fernão de Magalhães, 740)</span>
+                                <i class="fas fa-water"></i>
+                                <span>Unidade 3 (Av. Dr. Heitor Penteado, 1725 - Lagoa)</span>
                             </a>
+
                         </div>
                     </div>
 
-                    <!-- Botão Principal de Conversão WhatsApp (Posicionado por último) -->
+                    <!-- Botão Principal de Conversão WhatsApp -->
                     <a href="https://wa.me/5519996953554?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20unidades%20da%20Reviva%20e%20agendar%20uma%20visita."
                         target="_blank" class="btn btn-whatsapp zap-cta-big">
                         <i class="fab fa-whatsapp"></i>
@@ -797,8 +1034,7 @@
                     <img src="img/logo-oficial.png"
                         alt="Logo Reviva Senior's Residence" class="footer-logo-img">
                     <p>
-                        Instituição de Longa Permanência e Centro Dia para Idosos, liderada por enfermeira
-                        especializada. Oferecendo qualidade de vida, amor, acolhimento e assistência 24h em Campinas, São Paulo.
+                        Instituição de Longa Permanência e Residencial Sênior liderado por enfermeira especializada com 20 anos de formação. Oferecendo qualidade de vida, dignidade, afeto e assistência integral em Campinas/SP.
                     </p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/revivaseniors" target="_blank" rel="noopener noreferrer"
@@ -810,26 +1046,14 @@
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <h4>Atendimento</h4>
-                    <p style="font-size: 0.9rem; color: #a4c4ad; margin-bottom: 14px;">
-                        Entre em contato conosco para agendar visitas ou obter esclarecimentos detalhados sobre nossos
-                        serviços.
-                    </p>
-                    <a href="https://wa.me/5519996953554" target="_blank" class="btn btn-outline-light"
-                        style="width: 100%; margin-bottom: 12px;">
-                        <i class="fab fa-whatsapp"></i> Enviar Mensagem
-                    </a>
-                    <span style="font-size: 0.8rem; color: #9abfa2; display: block; text-align: center;">
-                        <i class="fas fa-shield-halved"></i> Registro no Conselho Municipal do Idoso (CMI)
-                    </span>
-                </div>
+
+
+
 
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Reviva Senior's Residence. Todos os direitos reservados. Cuidado humanizado para a
-                    terceira idade.</p>
+                <p>&copy; 2026 Reviva Senior's Residence. Todos os direitos reservados. Cuidado humanizado para a terceira idade.</p>
             </div>
         </div>
     </footer>
@@ -854,7 +1078,7 @@
     </a>
 
     <!-- Scripts -->
-    <script src="script.js?v=27"></script>
+    <script src="script.js?v=28"></script>
 </body>
 
 </html>
