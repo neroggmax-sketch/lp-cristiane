@@ -2004,7 +2004,7 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  animation: filmScrollUpTrack 115s linear infinite;
+  animation: filmScrollUpTrack 220s linear infinite;
   will-change: transform;
 }
 
