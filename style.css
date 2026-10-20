@@ -4336,14 +4336,14 @@ button, input, select, textarea {
 .btn-instagram-big {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 36px;
+  gap: 10px;
+  padding: 13px 28px;
   background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
   color: #ffffff;
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-weight: 600;
+  font-size: 0.98rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 10px 25px rgba(253, 29, 29, 0.3);
+  box-shadow: 0 8px 22px rgba(253, 29, 29, 0.28);
   transition: var(--transition);
 }
 
